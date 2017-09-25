@@ -1,42 +1,56 @@
-# TRABALHO 01:  Título do Trabalho
-Trabalho desenvolvido durante a disciplina de BD1
+# TRABALHO 01:  _NetIfes_ 
+Trabalho desenvolvido durante a disciplina de BD1 no semestres 2017/2.
 
 # Sumário
 
 ### 1. COMPONENTES<br>
-Integrantes do grupo<br>
-primeiro_componente_do_grupo:email_primeiro_componente@dominio.com<br>
-segundo_componente_do_grupo:email_segundo_componente@dominio.com<br>
+**Integrantes do grupo:**<br>
+- Ana Carolina Cebin Pereira: <a href="url"> carolcebin@gmail.com </a>
+- Jardielma Queiroz de Lima: <a href="url"> jardielmaqueiroz@hotmail.com </a>
+- Matheus Barbosa: <a href="url"> matheuskleber@live.com<br></a>
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
-Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
-<br>e motivação da escolha realizada. <br>
+<P align="justify">&nbsp&nbsp NETIFES é um serviço de streaming cujo objetivo é disponibilizar os usuários um serviço de transmissão online, no qual filmes podem ser assistidos via internet sem a necessidade de fazer download. Obs:(Não disponibilizamos filmes, apenas trailers para fazer como simulação do filmes).</P>
+
+<P align="justify">&nbsp&nbsp Na disciplina de programação 2 surgiu o desafio de desenvolver um provedor de filmes, cujo o nome é NetIfes. Quando desenvolvemos o trabalho, tivemos que fazer toda a parte de cadastro de usuário até as informações de filmes via arquivo e com isso nos deparamos com algumas limitações que impedisse com que o projeto deixasse de ser apenas um site e virasse de fato um servidor de serviço de streaming.</P>
+
 
 ### 3.MINI-MUNDO<br>
+<P align="justify">&nbsp&nbsp Como já dito o NETIFES é um serviço de  streaming cujo objetivo é disponibilizar serviços de transmissão online. Obs:(Não disponibilizamos filmes, apenas trailers para fazer como simulação do filmes).</P>
 
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas) <br>
-Entrevista com o usuário e identificação dos requisitos.<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
+<P align="justify">&nbsp&nbsp Para desenvolver o sistema precisamos armazenar dados dos usuários: Nome, CPF, login, senha e outros e as informações dos filmes: Titulo, subtítulo, sinopse entre outros. E também informações para que sirva de estatísticas para que os filmes se ajuste para cada usuário, como outras estatísticas para saber por exemplo novel de satisfação, total de visualização por gênero.</P>
+
+<P align="justify">&nbsp&nbsp O usuário ao acessar a página inicial vai se deparar com uma página que irá conter informações sobre os termos de uso, central de ajuda e um link que irá direcionar o usuário para um site que testará a velocidade da internet e um botão chamado entrar, cujo o qual é a “porta de entrada” para o usuário aderir ao NETIFES.</P>
+
+<P align="justify">&nbsp&nbsp Quando o usuário clicar no botão entrar ele será direcionado para uma página de login, onde usuários já cadastrados irão fazer login com seu usuário e senha. Já os que não estiverem cadastrados irão clicar no link (inscreva-se agora) e irão fazer o cadastro de usuário, onde iram preencher um formulário disponibilizando dados como: Nome, CPF, login, senha, endereço, numero do cartão de credito, caso ele queira aderir ao serviço pago e outras informações de identificação.</P>
+    
+<P align="justify">&nbsp&nbsp Quando o usuário já se encontra cadastrado ele terá acesso a uma página de catálogo de  filmes, onde aparece um banner com os principais lançamentos disponíveis e abaixo todos os filmes disponíveis ordenados a critério do gosto do usuários, ou sejá, quando o usário fizer seu cadastro ele irá preencher um formulário, cujo o qual irá gerá um tabela se similarida, que irá conter infromações dos tipos de filme que o usuário mais gosta.</P>
+    
+ <P align="justify">&nbsp&nbsp Na página de catálogo o usuário contará também, com links que o levará até informações, serviços disponibilizados e informações para contato. Na página de catálogo o usuário poderá visualizar os filmes de acordo com a sua categoria. </P>
+    
+<P align="justify">&nbsp&nbsp Quando o usuário clicar no filme que ele quer assistir, abrirá uma página chamada filme que irá conter informações sobre o filme e a tela para assistir o filme que deseja. Obs:(Estará disponibilizado para assistir trailers puxados do youtube).</P>
+    
+<P align="justify">&nbsp&nbsp Será disponibilizado também uma página contendo estatísticas gerais que apenas o administrador terá acesso. </P>
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
-Neste ponto a codificação não e necessária, somente as ideias de telas devem ser criadas, o princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas ou descartadas <br>
-
-Sugestão: https://balsamiq.com/products/mockups/<br>
-
-![Alt text](https://github.com/discipbd1/trab01/blob/master/balsamiq.png?raw=true "Title")
+- [MOCKUPS](https://)
 
 #### 4.1 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
-    e deve ser criada antes do modelo conceitual
-    c) Após criada esta tabela não deve ser modificada, pois será comparada com a tabela final na conclusão do trabalho
-    
-    
+- [TABELA](https://)
+
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 10 principais relatórios que podero ser obtidos por meio do sistema proposto!
+- **Principais Relatórios do Sistema NetIfes:**
+    - Lista de filmes no catálogo
+    - Detalhes do filme
+    - Estatísticas gerais para o administrador
+    - Dados do usuário
+    - Pedidos de sugestões de filmes do usuário
+    - Lista de recomendados para o usuário
+    - Lista de novas aquisições
+    - Lista de novos lançamentos
+    - Relatório de novos usuários para o administrador
+    - Estatísticas de evasão do serviço premium para o administrador
+
     
 >## Marco de Entrega 01 em: (06/09/2017)<br>
 
