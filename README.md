@@ -36,7 +36,7 @@ Trabalho desenvolvido durante a disciplina de BD1 no semestres 2017/2.
 - [MOCKUPS](https://)
 
 #### 4.1 TABELA DE DADOS DO SISTEMA:
-- [TABELA](https://)
+- [TABELA](https://github.com/netifes/trab01/blob/master/TABELA%20GERAL%20(1).xlsx)
 
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
 - **Principais Relatórios do Sistema NetIfes:**
