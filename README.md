@@ -12,13 +12,14 @@ Trabalho desenvolvido durante a disciplina de BD1 no semestres 2017/2.
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
 <P align="justify">&nbsp&nbsp NETIFES é um serviço de streaming cujo objetivo é disponibilizar os usuários um serviço de transmissão online, no qual filmes podem ser assistidos via internet sem a necessidade de fazer download. Obs:(Não disponibilizamos filmes, apenas trailers para fazer como simulação do filmes).</P>
 
-<P align="justify">&nbsp&nbsp Na disciplina de programação 2 surgiu o desafio de desenvolver um provedor de filmes, cujo o nome é NetIfes. Quando desenvolvemos o trabalho, tivemos que fazer toda a parte de cadastro de usuário até as informações de filmes via arquivo e com isso nos deparamos com algumas limitações que impedisse com que o projeto deixasse de ser apenas um site e virasse de fato um servidor de serviço de streaming.</P>
+<P align="justify">&nbsp&nbsp Na disciplina de programação 2 surgiu o desafio de desenvolver um provedor de filmes, cujo o nome é NetIfes. Quando desenvolvemos o trabalho, tivemos que fazer toda a parte de cadastro de usuário até as informações de filmes utilizando arquivo e com isso nos deparamos com algumas limitações que impedisse com que o projeto deixasse de ser apenas um site e virasse de fato um servidor de serviço de streaming. Devido o motivo citado acima ecolhemos este projeto para desenvolver.</P>
 
 
 ### 3.MINI-MUNDO<br>
 <P align="justify">&nbsp&nbsp Como já dito o NETIFES é um serviço de  streaming cujo objetivo é disponibilizar serviços de transmissão online. Obs:(Não disponibilizamos filmes, apenas trailers para fazer como simulação do filmes).</P>
 
-<P align="justify">&nbsp&nbsp Para desenvolver o sistema precisamos armazenar dados dos usuários: Nome, CPF, login, senha e outros e as informações dos filmes: Titulo, subtítulo, sinopse entre outros. E também informações para que sirva de estatísticas para que os filmes se ajuste para cada usuário, como outras estatísticas para saber por exemplo novel de satisfação, total de visualização por gênero.</P>
+<P align="justify">&nbsp&nbsp Para desenvolver o sistema precisamos armazenar dados dos usuários: Nome, CPF, login, senha, tipo de conta e outros e para os filmes precisamos saber informações como: Titulo, subtítulo, sinopse, diretores, elenco entre outros. Para fazer com o que o sistema se adeque para cada usuário é necesário cadastrar informações para que sirva de estatística, essas informações serão uma uma lista com valores indicativos para o nível de gosto para cada genero de filma que será informado no momento do cadastro, como outras estatísticas para saber por exemplo o nivel de satisfação, total de visualização por gênero.
+</P>
 
 <P align="justify">&nbsp&nbsp O usuário ao acessar a página inicial vai se deparar com uma página que irá conter informações sobre os termos de uso, central de ajuda e um link que irá direcionar o usuário para um site que testará a velocidade da internet e um botão chamado entrar, cujo o qual é a “porta de entrada” para o usuário aderir ao NETIFES.</P>
 
@@ -30,7 +31,7 @@ Trabalho desenvolvido durante a disciplina de BD1 no semestres 2017/2.
     
 <P align="justify">&nbsp&nbsp Quando o usuário clicar no filme que ele quer assistir, abrirá uma página chamada filme que irá conter informações sobre o filme e a tela para assistir o filme que deseja. Obs:(Estará disponibilizado para assistir trailers puxados do youtube).</P>
     
-<P align="justify">&nbsp&nbsp Será disponibilizado também uma página contendo estatísticas gerais que apenas o administrador terá acesso. </P>
+<P align="justify">&nbsp&nbsp Será gerado também uma página contendo estatísticas gerais que apenas o administrador terá acesso. </P>
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 - [MOCKUPS](https://)
