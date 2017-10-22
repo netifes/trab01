@@ -34,7 +34,7 @@ Trabalho desenvolvido durante a disciplina de BD1 no semestres 2017/2.
 <P align="justify">&nbsp&nbsp Será gerado também uma página contendo estatísticas gerais que apenas o administrador terá acesso. </P>
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
-- [MOCKUPS](https://)
+- [MOCKUPS](https://github.com/netifes/trab01/blob/master/Projeto.pdf)
 
 #### 4.1 TABELA DE DADOS DO SISTEMA:
 - [TABELA](https://github.com/netifes/trab01/blob/master/TABELA%20GERAL%20(1).xlsx)
