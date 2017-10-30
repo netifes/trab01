@@ -16,12 +16,10 @@ Trabalho desenvolvido durante a disciplina de BD1 no semestres 2017/2.
 
 
 ### 3.MINI-MUNDO<br>
-<P align="justify">&nbsp&nbsp Como já dito o NETIFES é um serviço de  streaming cujo objetivo é disponibilizar serviços de transmissão online. Obs:(Não disponibilizamos filmes, apenas trailers para fazer como simulação do filmes).</P>
+<P align="justify">&nbsp&nbsp Como já dito o NETIFES é um serviço de streaming cujo objetivo é disponibilizar serviços de transmissão online. Obs:(Não disponibilizamos filmes, apenas trailers para fazer como simulação do filmes).</P>
 
-<P align="justify">&nbsp&nbsp Para desenvolver o sistema precisamos armazenar dados dos usuários: Nome, CPF, login, senha, tipo de conta e outros e para os filmes precisamos saber informações como: Titulo, subtítulo, sinopse, diretores, elenco entre outros. Para fazer com o que o sistema se adeque para cada usuário é necesário cadastrar informações para que sirva de estatística, essas informações serão uma uma lista com valores indicativos para o nível de gosto para cada genero de filma que será informado no momento do cadastro, como outras estatísticas para saber por exemplo o nivel de satisfação, total de visualização por gênero.
-</P>
-
-<P align="justify">&nbsp&nbsp O usuário ao acessar a página inicial vai se deparar com uma página que irá conter informações sobre os termos de uso, central de ajuda e um link que irá direcionar o usuário para um site que testará a velocidade da internet e um botão chamado entrar, cujo o qual é a “porta de entrada” para o usuário aderir ao NETIFES.</P>
+<P Para desenvolver o sistema precisamos armazenar dados de conta  de usuário onde essas conta terá uma modalidade:(premium ou simples), um status para saber se conta encontra-se bloqueada ou não e também o usuário dono da conta. Para esses usuários precisamos guardar dados como nome: Nome, sobrenome, CPF, sexo, login, senha, cartão de Crédito, endereço, email, telefone e outros.
+O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis para assistir, e para isso serão cadastrados no sistema informações sobre os filmes como: Título, subtítulo, sinopse, diretores, elenco, duração, língua entre outros.</P>
 
 <P align="justify">&nbsp&nbsp Quando o usuário clicar no botão entrar ele será direcionado para uma página de login, onde usuários já cadastrados irão fazer login com seu usuário e senha. Já os que não estiverem cadastrados irão clicar no link (inscreva-se agora) e irão fazer o cadastro de usuário, onde iram preencher um formulário disponibilizando dados como: Nome, CPF, login, senha, endereço, numero do cartão de credito, caso ele queira aderir ao serviço pago e outras informações de identificação.</P>
     
