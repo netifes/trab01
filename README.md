@@ -25,11 +25,11 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
     
 <P align="justify">&nbsp&nbspO usuário ao acessar a página inicial vai se deparar com uma página que irá conter informações sobre os termos de uso, central de ajuda e um link que irá direcionar o usuário para um site que testará a velocidade da internet e um botão chamado Entrar, cujo o qual é a “porta de entrada” para o usuário aderir ao NETIFES. Já os que não estiverem cadastrados irão clicar no link (inscreva-se agora) e irão fazer o cadastro de usuário, onde iram preencher um formulário disponibilizando informações de identificação.</P>
     
- <P align="justify">&nbsp&nbsp Na página de catálogo o usuário contará também, com links que o levará até informações, serviços disponibilizados e informações para contato. Na página de catálogo o usuário poderá visualizar os filmes de acordo com a sua categoria. </P>
+ <P align="justify">&nbsp&nbsp Quando o usuário já se encontra cadastrado ele terá acesso a uma página de catálogo de filmes, onde aparece um banner com os principais lançamentos disponíveis e abaixo todos os filmes disponíveis ordenados a critério do gosto do usuários. Na página de catálogo o usuário contará também, com links que o levará até informações, serviços disponibilizados e informações para contato. Na página de catálogo o usuário poderá visualizar os filmes de acordo com a sua categoria. </P>
     
 <P align="justify">&nbsp&nbsp Quando o usuário clicar no filme que ele quer assistir, abrirá uma página chamada filme que irá conter informações sobre o filme e a tela para assistir o filme que deseja. Obs:(Estará disponibilizado para assistir trailers puxados do youtube).</P>
     
-<P align="justify">&nbsp&nbsp Será gerado também uma página contendo estatísticas gerais que apenas o administrador terá acesso. </P>
+<P align="justify">&nbsp&nbsp Será gerado também uma página contendo estatísticas gerais que apenas o administrador terá acesso, essas estatísticas serão geradas quando o usuário assistir um filme, ou seja, quando ele clica em um filme ou assistir o mesmo o sistema entenderá que aquele filme foi buscado ou assistido e contabilizará esse número, para que fique disponível para o administrador e ele possa em cima desses dados gerar relatórios como: Média de idade que assiste filme de ficção científica, Número de usuários que  assistiram o último lançamento e etc. </P>
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 - [MOCKUPS](https://github.com/netifes/trab01/blob/master/Projeto.pdf)
