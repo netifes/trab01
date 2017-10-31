@@ -59,7 +59,8 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
         * O protótipo deve possui no mínimo duas relações N para N
         * o mínimo de entidades do modelo conceitual será igual a 5
         
-![](https://github.com/netifes/trab01/blob/master/images/Entidade_Relacionamento.pngraw=true "Modelo Conceitual")
+ ![Alt Text](https://github.com/netifes/trab01/blob/master/images/Entidade_Relacionamento.png)       
+![](https://github.com/netifes/trab01/blob/master/images/Entidade_Relacionamento.png raw=true "Modelo Conceitual")
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
     C) QUALIDADE 
