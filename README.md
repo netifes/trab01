@@ -61,16 +61,20 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+- **_Ido:_** Higor Rebello, Icaro Gandini, Tadeu Junior.
+- **_2Weeels:_** Lucas Eduardo.
 
 #### 5.2 DECISÕES DE PROJETO
-    [atributo]: [descrição da decisão]
-    
-    EXEMPLO:
-    a) Campo endereço: em nosso projeto optamos por um campo multivalorado e composto, pois a empresa 
-    pode possuir para cada departamento mais de uma localização... 
-    b) justifique!
+
+- **Telefone:** Optamos por um campo multivalorado, pois o usuário queando se cadastrar
+    vai poder cadastrar mais de um telefone.
+
+- **Genero:** Opotamos por um campo multivalorado, pois um filme pode ser classificado em mais de um genero.
+
+- **Elenco:** Opotamos por um campo multivalorado, pois um filme é composto por um elenco, que é um conjunto
+de atores, logo o filme vai possuir mais de um ator fazendo parte do seu elenco.
+
+- **Idimo:** Opotamos por um campo multivalorado, pois um filme é "adaptado" para varios idiomas.
 
 #### 5.3 DESCRIÇÃO DOS DADOS 
     [objeto]: [descrição do objeto]
