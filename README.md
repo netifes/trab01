@@ -61,6 +61,7 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
     
 #### 5.1 Validação do Modelo Conceitual
+
 - **_Ido:_** Higor Rebello, Icaro Gandini, Tadeu Junior.
 - **_2Weeels:_** Lucas Eduardo.
 
