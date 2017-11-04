@@ -136,12 +136,13 @@ de atores, logo o filme vai possuir mais de um ator fazendo parte do seu elenco.
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas DDL 
         (criação de tabelas, alterações, etc..)
-          
+- [Script 7](https://github.com/netifes/trab01/blob/master/arquivos/CreateTableNetIfes.sql)          
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
         a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físic
         b) formato .SQL
+- [Script 8.1](https://github.com/netifes/trab01/blob/master/arquivos/InsertNetIfes.sql)
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
         a) Junção dos scripts anteriores em um único script 
