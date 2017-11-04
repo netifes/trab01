@@ -60,7 +60,7 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
     
-#### 5.1 Validação do Modelo Conceitual
+#### 5.1 VALIDAÇÃO DO MODELO CONCEITUAL
 
 - **_Ido:_** Higor Rebello, Icaro Gandini, Tadeu Junior.
 - **_2Weeels:_** Lucas Eduardo.
@@ -70,28 +70,68 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
 - **Telefone:** Optamos por um campo multivalorado, pois o usuário queando se cadastrar
     vai poder cadastrar mais de um telefone.
 
-- **Genero:** Opotamos por um campo multivalorado, pois um filme pode ser classificado em mais de um genero.
+- **Genero:** Optamos por um campo multivalorado, pois um filme pode ser classificado em mais de um genero.
 
-- **Elenco:** Opotamos por um campo multivalorado, pois um filme é composto por um elenco, que é um conjunto
+- **Elenco:** Optamos por um campo multivalorado, pois um filme é composto por um elenco, que é um conjunto
 de atores, logo o filme vai possuir mais de um ator fazendo parte do seu elenco.
 
-- **Idimo:** Opotamos por um campo multivalorado, pois um filme é "adaptado" para varios idiomas.
+- **Idioma:** Optamos por um campo multivalorado, pois um filme é "adaptado" para varios idiomas.
 
 #### 5.3 DESCRIÇÃO DOS DADOS 
-    [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+- **Usuário:** Tabela que armazena as informações relativas ao usuário.
+    - **Pk_usuário:** Campo identificador do usuário.
+    - **CPF:** Campo que armazena o número de Cadastro de Pessoa Física de cada usuário do provedor.
+    - **Nome:** Campo que armazena o nome do usuário do provedor.
+    - **Sobrenome:** campo que armazena o sobreno do usuário do provedor.
+    - **Data_Nascimento:** Campo que armazena a data de nascimento do usuário.
+    - **Sexo:** Campo que armazena o sexo do usário.
+    - **Endereco:** Campo que armazena o endereço do usuário.
+    - **Email:** Campo que armazena o email do usário.
+    - **Senha:** Campo que armazena a senha que o usuário irá utilizar para fazer login no provedor.
+    - **Telefone:** Campo que armazena o telefone do usuário.
+    - **Tipo:** Campo que identifica o tipo do usuário (Admim, Comum)..
+    - **Status:** Campo que verifica se o usuário está com a conta bloqueada ou não, situação que ocorrre por exemplo que errar a senha 3 vezes (Bloqueado, Desbloqueado).
 
+- **Filme:** Tabela que armazena as informações relativas aos filmes cadastrados no sistema.
+    - **Pk_filme:** Campo identificador do filme.
+    - **Titulo:** Campo que armazena o titulo do filme que estará disponivel para o usuário assistir.
+    - **Subtitulo:** Campo que armazena o subtitulo do filme que estará disponivel para o usuário assistir.
+    - **Sinopese:** Campo que armazena uma breve descrião do filme que estará disponivel para o usuário assistir.
+    - **Duração:** Campo que armazena o tempo de duração do filme.
+    - **Ano:** Campo que armazena o ano de lançamento do filme.
+    - **Capa:** Campo que armazena o endereço da imagem da capa do filme.
+    - **Video:** Campo que armazena a URL do trailer do filme.
+    - **Genero:** Campo que armazena os generos do filme.
+    - **Elenco:** Campo que armazena os nomes do atores que fazem parte do elenco do filme.
+    - **Idioma:** Campo que armazena o idioma original do filme.
+    - **Pais:** Campo que armazena o pais de origem do filme.
+    - **Sinopese:** Campo que armazena a quantida de visualizações que o filme tem no site.
+   
+- **Conta:** Tabela que armazena informações referentes a conta do usuário.
+    - **Pk_conta:** Campo identificador da conta.
+    - **Usário:** Campo que armazena a PK de cadastro do usuário dono da conta.
+    - **Data_cadastro:** Campo que armazena a data que o usuário cadastrou a conta.
+    
+- **Modalidade:** Tabela que armazena informaões sobre a modalidade da conta do usuário.
+    - **Pk_modalidade:** Campo identificador da modalidade.
+    - **Modalidade:** Campo que armazena a descrição da modalidade da conta (Premium, Normal).
+ 
+- **Histórico_Pagamento:** Tabela que armazena os pagamentos realizados, caso o usuário deseje ter uma conta na modalidade premium.
+    - **Pk_pagamento:** Campo identificador do pagamento.
+    - **Data_pagamento:** Campo que armazena a data do pagamento realizado.
+ 
+- **Diretor:** Tabela que armazena registro de diretores de filmes.
+    - **Pk_diretor:** Campo identificador do diretor cadastrado.
+    - **Nome:** Campo que armazena o nome do diretor.
+    - **Sobrenome:** Campo que armazena o sobrenome do diretor.
+    - **Idade:** Campo que armazena a idade do diretor.
+    - **Pais:** Campo que armazena o pais origem do diretor.
 
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do modelo lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
-
->## Marco de Entrega 02 em: (Data definida no cronograma)<br>
-
+- [MODELO LÓGICO](https://github.com/netifes/trab01/blob/master/arquivos/modelo_logico_netIfes.brM3)   
+ ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_logico_netIfes.png)       
+    
+    
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas DDL 
         (criação de tabelas, alterações, etc..)
