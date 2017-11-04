@@ -160,6 +160,7 @@ de atores, logo o filme vai possuir mais de um ator fazendo parte do seu elenco.
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
 - [Script 8.3](https://github.com/netifes/trab01/blob/master/arquivos/DropCreateInsert.sql)
+- [Backup do Banco de Dados POSTGRES](https://github.com/netifes/trab01/blob/master/arquivos/BackupNetifes)
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
