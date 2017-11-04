@@ -151,6 +151,7 @@ de atores, logo o filme vai possuir mais de um ator fazendo parte do seu elenco.
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
 - [Script 8.2](https://github.com/netifes/trab01/blob/master/arquivos/CreateAndInsertNetifes.sql)
+- [Backup do Banco de Dados POSTGRES](https://github.com/netifes/trab01/blob/master/arquivos/BackupNetifes)
         
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
         a) Junção dos scripts anteriores em um único script 
