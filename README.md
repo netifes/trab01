@@ -55,10 +55,11 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
 
 ### 5.MODELO CONCEITUAL<br>
  
- - [MODELO CONCEITUAL](https://github.com/netifes/trab01/blob/master/arquivos/modelo_conceitual_netIfes.brM3)   
+- [MODELO CONCEITUAL](https://github.com/netifes/trab01/blob/master/arquivos/modelo_conceitual_netIfes.brM3)   
  ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_conceitual_netIfes.png)       
     
-    B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
+- [NOTAÇÃO UML](https://github.com/netifes/trab01/blob/master/arquivos/L%C3%B3gico_1.brM3)   
+ ![Alt Text](https://github.com/netifes/trab01/blob/master/images/Modelo%20De%20Classe.png)
     
 #### 5.1 VALIDAÇÃO DO MODELO CONCEITUAL
 
@@ -130,9 +131,6 @@ de atores, logo o filme vai possuir mais de um ator fazendo parte do seu elenco.
 ### 6	MODELO LÓGICO<br>
 - [MODELO LÓGICO](https://github.com/netifes/trab01/blob/master/arquivos/modelo_logico_netIfes.brM3)   
  ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_logico_netIfes.png)
-
-- [DIAGRAMA DE CLASSE](https://github.com/netifes/trab01/blob/master/arquivos/L%C3%B3gico_1.brM3)   
- ![Alt Text](https://github.com/netifes/trab01/blob/master/images/Modelo%20De%20Classe.png)
     
     
 ### 7	MODELO FÍSICO<br>
