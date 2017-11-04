@@ -129,7 +129,10 @@ de atores, logo o filme vai possuir mais de um ator fazendo parte do seu elenco.
 
 ### 6	MODELO LÓGICO<br>
 - [MODELO LÓGICO](https://github.com/netifes/trab01/blob/master/arquivos/modelo_logico_netIfes.brM3)   
- ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_logico_netIfes.png)       
+ ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_logico_netIfes.png)
+
+- [DIAGRAMA DE CLASSE](https://github.com/netifes/trab01/blob/master/arquivos/L%C3%B3gico_1.brM3)   
+ ![Alt Text](https://github.com/netifes/trab01/blob/master/images/Modelo%20De%20Classe.png)
     
     
 ### 7	MODELO FÍSICO<br>
