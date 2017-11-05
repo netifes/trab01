@@ -59,7 +59,7 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
  ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_conceitual_netIfes.png)       
     
 - [NOTAÇÃO UML](https://github.com/netifes/trab01/blob/master/arquivos/Logico_1.brM3)   
- ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_logico_netIfes.png)
+ ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_classe_netIfes.png%20.png)
     
 #### 5.1 VALIDAÇÃO DO MODELO CONCEITUAL
 
