@@ -141,17 +141,17 @@ INSERT INTO status (status)
 	VALUES ('Normal'),
     ('Bloqueado');
     
-INSERT INTO usuario (email, senha, ultimo_acesso, nome, sobrenome)
-	VALUES ('isabellaGomesSousa@jourrapide.com', 'jndsuiHi8h', '2017-09-06 18:16:24', 'Isabella', 'Gomes Sousa'),
-    ('brendaSouzaGomes@rhyta.com', 'queiP3lah5', '2017-09-06 15:22:03', 'Brenda', 'Souza Gomes'),
-    ('matheusbarbosa@gmail.com', 'aik8mogeeSai', '2017-02-03 22:34:19', 'Matheus', 'Barbosa'),
-    ('vitoriaCorreiaPereira@teleworm.us', 'Iciefie2xai4g', '2017-05-22 17:59:57', 'Vitoria', 'Correia Pereira'),
-    ('juliabrandao@hotmail.com', 'Iciefie2xai4g', '2017-02-10 13:24:02', 'Julia', 'Brandão'),
-    ('eduardoAraujoRocha@armyspy.com', 'ceecoph8EK0', '2017-09-04 19:10:14', 'Eduardo Araujo', 'Rocha'),
-    ('aliceCostaAzevedo@armyspy.com', 'aik8mogeeSai', '2017-10-27 18:25:02', 'Alice', 'Costa Azevedo'),
-    ('enzoOliveiraPinto@armyspy.com', 'aiw2taij9Fo', '2017-09-07 00:33:12', 'Enzo', 'Liveira Pinto'),
-    ('silvawallace@gmail.com', 'aik8mogeeSai', '2017-09-04 23:11:08', 'Wallace', 'Silva'),
-    ('estevanCunhaCastro@dayrep.com', 'abcxi123', '2017-09-05 16:25:34', 'Estevan', 'Cunha Castro');
+INSERT INTO usuario (email, senha, ultimo_acesso, nome, sobrenome, cpf)
+	VALUES ('isabellaGomesSousa@jourrapide.com', 'jndsuiHi8h', '2017-09-06 18:16:24', 'Isabella', 'Gomes Sousa', 32782754386),
+    ('brendaSouzaGomes@rhyta.com', 'queiP3lah5', '2017-09-06 15:22:03', 'Brenda', 'Souza Gomes', 26318271473),
+    ('matheusbarbosa@gmail.com', 'aik8mogeeSai', '2017-02-03 22:34:19', 'Matheus', 'Barbosa', 76538418481),
+    ('vitoriaCorreiaPereira@teleworm.us', 'Iciefie2xai4g', '2017-05-22 17:59:57', 'Vitoria', 'Correia Pereira', 50717187233),
+    ('juliabrandao@hotmail.com', 'Iciefie2xai4g', '2017-02-10 13:24:02', 'Julia', 'Brandão', 55774684423),
+    ('eduardoAraujoRocha@armyspy.com', 'ceecoph8EK0', '2017-09-04 19:10:14', 'Eduardo Araujo', 'Rocha', 46208317940),
+    ('aliceCostaAzevedo@armyspy.com', 'aik8mogeeSai', '2017-10-27 18:25:02', 'Alice', 'Costa Azevedo', 37801845676),
+    ('enzoOliveiraPinto@armyspy.com', 'aiw2taij9Fo', '2017-09-07 00:33:12', 'Enzo', 'Liveira Pinto', 77444792208),
+    ('silvawallace@gmail.com', 'aik8mogeeSai', '2017-09-04 23:11:08', 'Wallace', 'Silva', 30284609633),
+    ('estevanCunhaCastro@dayrep.com', 'abcxi123', '2017-09-05 16:25:34', 'Estevan', 'Cunha Castro', 47718288064);
     
 INSERT INTO cidade (cidade) 
 	VALUES ('Serra'), 

@@ -27,6 +27,7 @@ CREATE TABLE filme (
 );
 CREATE TABLE usuario(
 	id_Usuario SERIAL NOT NULL,
+    cpf BIGINT,
     email VARCHAR(50),
     senha VARCHAR(255),
     ultimo_acesso TIMESTAMP,
