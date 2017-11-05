@@ -21,7 +21,7 @@ Trabalho desenvolvido durante a disciplina de BD1 no semestres 2017/2.
 <P Para desenvolver o sistema precisamos armazenar dados de conta  de usuário onde essas conta terá uma modalidade:(premium ou simples), um status para saber se conta encontra-se bloqueada ou não e também o usuário dono da conta. Para esses usuários precisamos guardar dados como nome: Nome, sobrenome, CPF, sexo, login, senha, cartão de Crédito, endereço, email, telefone e outros.
 O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis para assistir, e para isso serão cadastrados no sistema informações sobre os filmes como: Título, subtítulo, sinopse, diretores, elenco, duração, língua entre outros.</P>
 
-<P align="justify">&nbsp&nbsp Para que o usuário sinta-se único e reconhecido, gerando assim uma satisfação para o mesmo, utilizaremos um sistema de recomendações (SR). Para que o (SR) gere recomendações personalizadas ele irá primeiro identificar o perfil do usuário utilizando as técnicas de extração explícita e implícita, ou seja, quando o usuário se cadastra no site ele responderá um questionário que a partir desses dados irá criar um primeiro perfil, que posteriormente se ainda será mais personalizado pois o sistema utilizará a de extração explícita para personalizar o perfil, ou seja,  por meio da navegação do usuário no sistema, onde serão guardadas informações do tipo histórico de busca, filmes que assistiu, lista de filmes que deseja ver entre outras.</P>
+ <P align="justify">&nbsp&nbsp Para que o usuário sinta-se único e reconhecido, gerando assim uma satisfação para o mesmo, utilizaremos um sistema de recomendações (SR). Para que o (SR) gere recomendações personalizadas ele irá primeiro identificar o perfil do usuário utilizando as técnicas de extração explícita e implícita, ou seja, quando o usuário se cadastra no site ele responderá um questionário que a partir desses dados irá criar um primeiro perfil, que posteriormente se ainda será mais personalizado pois o sistema utilizará a de extração explícita para personalizar o perfil, ou seja,  por meio da navegação do usuário no sistema, onde serão guardadas informações do tipo histórico de busca, filmes que assistiu, lista de filmes que deseja ver entre outras.</P>
     
 <P align="justify">&nbsp&nbspO usuário ao acessar a página inicial vai se deparar com uma página que irá conter informações sobre os termos de uso, central de ajuda e um link que irá direcionar o usuário para um site que testará a velocidade da internet e um botão chamado Entrar, cujo o qual é a “porta de entrada” para o usuário aderir ao NETIFES. Já os que não estiverem cadastrados irão clicar no link (inscreva-se agora) e irão fazer o cadastro de usuário, onde iram preencher um formulário disponibilizando informações de identificação.</P>
     
@@ -58,8 +58,8 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
 - [MODELO CONCEITUAL](https://github.com/netifes/trab01/blob/master/arquivos/modelo_conceitual_netIfes.brM3)   
  ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_conceitual_netIfes.png)       
     
-- [NOTAÇÃO UML](https://github.com/netifes/trab01/blob/master/arquivos/L%C3%B3gico_1.brM3)   
- ![Alt Text](https://github.com/netifes/trab01/blob/master/images/Modelo%20De%20Classe.png)
+- [NOTAÇÃO UML](https://github.com/netifes/trab01/blob/master/arquivos/Logico_1.brM3)   
+ ![Alt Text](https://github.com/netifes/trab01/blob/master/images/modelo_logico_netIfes.png)
     
 #### 5.1 VALIDAÇÃO DO MODELO CONCEITUAL
 
