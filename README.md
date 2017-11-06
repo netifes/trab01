@@ -151,18 +151,18 @@ de atores, logo o filme vai possuir mais de um ator fazendo parte do seu elenco.
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
    
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS<br>
-	- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.1%20-%20Consultas.sql)
-	- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.1)
+- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.1%20-%20Consultas.sql)
+- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.1)
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE <br>
-	- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.2%20-%20Consultas.sql)
-	- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.2)
+- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.2%20-%20Consultas.sql)
+- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.2)
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS
-	- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.3%20-%20Consultas%20e%20Alteracoes%20.sql)
-	- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.3)
+- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.3%20-%20Consultas%20e%20Alteracoes%20.sql)
+- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.3)
      
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE<br>
-	- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.4%20-%20Consultas.sql)
-	- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.4)
+- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.4%20-%20Consultas.sql)
+- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.4)
 >## Marco de Entrega 03 em: (Data definida no cronograma)<br>
     
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
