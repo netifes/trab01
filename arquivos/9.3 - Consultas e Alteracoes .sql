@@ -1,3 +1,4 @@
+
 /* Exemplo 9.3.1*/
 Select * from filme where ano > 2000 and avaliacao > 3;  /*Filmes com Avaliacao maior que 3 e foram lancados depois de 2000*/
 
@@ -11,7 +12,15 @@ Select * from filme where avaliacao > 2 or duracao < 100; /*Filmes com avaliacao
 Select * from filme where avalicao is not 1; /*Todos os filmes que nao tem avalicao com nota 1*/
 
 /* Exemplo 9.3.5*/
-Select * from usuario where nome = 'Matheus' or senha = 'jndsuiHi8h' ; /*Procura Usuario cadastrado que tenho como primeiro nome matheus ou que tenha a senha jndsuiHi8h*//*Exemplo 9.3.9*/
+Select * from usuario where nome = 'Matheus' or senha = 'jndsuiHi8h' ; /*Procura Usuario cadastrado que tenho como primeiro nome matheus ou  que tenha a senha jndsuiHi8h*/
+
+
+/*Exemplo 9.3.*/
+SELECT  visualizacoes,
+((visualizacoes*1.0/ 299824) *100)  AS mediaVisualizacoes
+FROM filme; /*Visulaiza o peso que cada filme respresenta nas visualizacoes*/
+
+/*Exemplo 9.3.9*/
 UPDATE usuario SET senha ='sjdbfsdbf34' WHERE senha = 'jndsuiHi8h'; /*Muda a senha do usuario*/
 
 /*Exemplo 9.3.10*/
