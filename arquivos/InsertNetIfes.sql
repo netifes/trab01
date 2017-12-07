@@ -1,4 +1,4 @@
-INSERT INTO acesso (acesso) 
+﻿INSERT INTO acesso (acesso) 
 	VALUES ('Indisponível'), 
     ('Disponível');
     
@@ -360,5 +360,3 @@ INSERT INTO rel_usuario_status (id_Usuario, id_Status)
     (1,2),
     (1,1),
     (1,1);
-    
-   

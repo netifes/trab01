@@ -1,4 +1,4 @@
-CREATE TABLE pais(
+﻿CREATE TABLE pais(
 	id_Pais SERIAL NOT NULL,
     pais VARCHAR(50),
     PRIMARY KEY(id_Pais)

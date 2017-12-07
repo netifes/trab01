@@ -1,4 +1,4 @@
-drop table acesso cascade;
+﻿drop table acesso cascade;
 drop table  bandeira cascade;
 drop table cep cascade;
 drop table cidade cascade;
@@ -555,4 +555,3 @@ INSERT INTO rel_usuario_status (id_Usuario, id_Status)
     (1,1),
     (1,1);
     
-   
