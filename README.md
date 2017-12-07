@@ -12,7 +12,7 @@ Trabalho desenvolvido durante a disciplina de BD1 no semestres 2017/2.
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
 <P align="justify">&nbsp&nbsp NETIFES é um serviço de streaming cujo objetivo é disponibilizar os usuários um serviço de transmissão online, no qual filmes podem ser assistidos via internet sem a necessidade de fazer download. Obs:(Não disponibilizamos filmes, apenas trailers para fazer como simulação do filmes).</P>
 
-<P align="justify">&nbsp&nbsp Na disciplina de programação 2 surgiu o desafio de desenvolver um provedor de filmes, cujo o nome é NetIfes. Quando desenvolvemos o trabalho, tivemos que fazer toda a parte de cadastro de usuário até as informações de filmes utilizando arquivo e com isso nos deparamos com algumas limitações que impedisse com que o projeto deixasse de ser apenas um site e virasse de fato um servidor de serviço de streaming. Devido o motivo citado acima ecolhemos este projeto para desenvolver.</P>
+<P align="justify">&nbsp&nbsp Na disciplina de programação 2 surgiu o desafio de desenvolver um provedor de filmes, cujo o nome é NetIfes. Quando desenvolvemos o trabalho, tivemos que fazer toda a parte de cadastro de usuário até as informações de filmes utilizando arquivo e com isso nos deparamos com algumas limitações que impedisse com que o projeto deixasse de ser apenas um site e virasse de fato um servidor de serviço de streaming. Devido tal fato ecolhemos este projeto para desenvolver.</P>
 
 
 ### 3.MINI-MUNDO<br>
@@ -49,7 +49,6 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
     - Lista de novos lançamentos
     - Relatório de novos usuários para o administrador
     - Estatísticas de evasão do serviço premium para o administrador
-
     
 >## Marco de Entrega 01 em: (06/09/2017)<br>
 
@@ -68,14 +67,7 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
 
 #### 5.2 DECISÕES DE PROJETO
 
-- **Telefone:** Optamos por um campo multivalorado, pois o usuário queando se cadastrar
-    vai poder cadastrar mais de um telefone.
-
 - **Genero:** Optamos por um campo multivalorado, pois um filme pode ser classificado em mais de um genero.
-
-- **Elenco:** Optamos por um campo multivalorado, pois um filme é composto por um elenco, que é um conjunto
-de atores, logo o filme vai possuir mais de um ator fazendo parte do seu elenco.
-
 - **Idioma:** Optamos por um campo multivalorado, pois um filme é "adaptado" para varios idiomas.
 
 #### 5.3 DESCRIÇÃO DOS DADOS 
