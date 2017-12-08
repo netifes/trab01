@@ -70,7 +70,7 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
 - **Genero:** Optamos por um campo multivalorado, pois um filme pode ser classificado em mais de um genero.
 - **Idioma:** Optamos por um campo multivalorado, pois um filme é "adaptado" para varios idiomas.
 - **Contato:** Optamos por criar uma entidade contato, pois o tlefone, e-mail entre outros meios de contatos são atibutos atômicos, por tanto decidimos criar uma entidade onde relacionasse todos os meios de contato do usuário e o assiciasse também com o tipo do contato.
--**Contratados:** Optamos por criar uma entidade que relacione todos os envolvidos com o filme, seja como ator, diretor e afins, onde essociado a esse contratado tem a sua função associada.
+- **Contratados:** Optamos por criar uma entidade que relacione todos os envolvidos com o filme, seja como ator, diretor e afins, onde essociado a esse contratado tem a sua função associada.
 
 #### 5.3 DESCRIÇÃO DOS DADOS 
 - **Usuário:** Tabela que armazena as informações relativas ao usuário.
