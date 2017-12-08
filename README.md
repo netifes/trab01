@@ -69,6 +69,8 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
 
 - **Genero:** Optamos por um campo multivalorado, pois um filme pode ser classificado em mais de um genero.
 - **Idioma:** Optamos por um campo multivalorado, pois um filme é "adaptado" para varios idiomas.
+- **Contato:** Optamos por criar uma entidade contato, pois o tlefone, e-mail entre outros meios de contatos são atibutos atômicos, por tanto decidimos criar uma entidade onde relacionasse todos os meios de contato do usuário e o assiciasse também com o tipo do contato.
+-**Contratados:** Optamos por criar uma entidade que relacione todos os envolvidos com o filme, seja como ator, diretor e afins, onde essociado a esse contratado tem a sua função associada.
 
 #### 5.3 DESCRIÇÃO DOS DADOS 
 - **Usuário:** Tabela que armazena as informações relativas ao usuário.
@@ -79,46 +81,50 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
     - **Data_Nascimento:** Campo que armazena a data de nascimento do usuário.
     - **Sexo:** Campo que armazena o sexo do usário.
     - **Endereco:** Campo que armazena o endereço do usuário.
-    - **Email:** Campo que armazena o email do usário.
     - **Senha:** Campo que armazena a senha que o usuário irá utilizar para fazer login no provedor.
-    - **Telefone:** Campo que armazena o telefone do usuário.
-    - **Tipo:** Campo que identifica o tipo do usuário (Admim, Comum)..
     - **Status:** Campo que verifica se o usuário está com a conta bloqueada ou não, situação que ocorrre por exemplo que errar a senha 3 vezes (Bloqueado, Desbloqueado).
 
 - **Filme:** Tabela que armazena as informações relativas aos filmes cadastrados no sistema.
     - **Pk_filme:** Campo identificador do filme.
     - **Titulo:** Campo que armazena o titulo do filme que estará disponivel para o usuário assistir.
     - **Subtitulo:** Campo que armazena o subtitulo do filme que estará disponivel para o usuário assistir.
-    - **Sinopese:** Campo que armazena uma breve descrião do filme que estará disponivel para o usuário assistir.
+    - **Sinopse:** Campo que armazena uma breve descrião do filme que estará disponivel para o usuário assistir.
     - **Duração:** Campo que armazena o tempo de duração do filme.
     - **Ano:** Campo que armazena o ano de lançamento do filme.
     - **Capa:** Campo que armazena o endereço da imagem da capa do filme.
-    - **Video:** Campo que armazena a URL do trailer do filme.
+    - **Trailer:** Campo que armazena a URL do trailer do filme.
     - **Genero:** Campo que armazena os generos do filme.
-    - **Elenco:** Campo que armazena os nomes do atores que fazem parte do elenco do filme.
     - **Idioma:** Campo que armazena o idioma original do filme.
     - **Pais:** Campo que armazena o pais de origem do filme.
-    - **Sinopese:** Campo que armazena a quantida de visualizações que o filme tem no site.
-   
-- **Conta:** Tabela que armazena informações referentes a conta do usuário.
-    - **Pk_conta:** Campo identificador da conta.
-    - **Usário:** Campo que armazena a PK de cadastro do usuário dono da conta.
-    - **Data_cadastro:** Campo que armazena a data que o usuário cadastrou a conta.
+    - **Visualizações:** Campo que armazena a quantida de visualizações que o filme tem no site.
+    - **Data_visualização:** Campo que armazena o dia em que o filme foi visualizado.
+    
+- **Contato:** Tabela que armazena registro de contatos do usuário.
+    - **Pk_contato:** Campo identificador do conta cadastrado.
+    - **Contato:** Campo que armazena o contato.
+    
+ - **Tipo_contato:** Tabela que armazena os tipos de meios de contatos (Telefone, celular, e-mail, ...).
+    - **Pk_tipo_contato:** Campo identificador do tipo de contato.
+    - **Descricao:** Campo que armazena a descrição do tipo de contato.
     
 - **Modalidade:** Tabela que armazena informaões sobre a modalidade da conta do usuário.
     - **Pk_modalidade:** Campo identificador da modalidade.
     - **Modalidade:** Campo que armazena a descrição da modalidade da conta (Premium, Normal).
+    - **Valor:** Campo que armazena o valor que o usuário pagará pela modalidade.
  
 - **Histórico_Pagamento:** Tabela que armazena os pagamentos realizados, caso o usuário deseje ter uma conta na modalidade premium.
     - **Pk_pagamento:** Campo identificador do pagamento.
     - **Data_pagamento:** Campo que armazena a data do pagamento realizado.
  
-- **Diretor:** Tabela que armazena registro de diretores de filmes.
-    - **Pk_diretor:** Campo identificador do diretor cadastrado.
-    - **Nome:** Campo que armazena o nome do diretor.
-    - **Sobrenome:** Campo que armazena o sobrenome do diretor.
-    - **Idade:** Campo que armazena a idade do diretor.
-    - **Pais:** Campo que armazena o pais origem do diretor.
+- **Contratado:** Tabela que armazena registro de pessoas que exercem funções no filme.
+    - **Pk_contratado:** Campo identificador do contratado cadastrado.
+    - **Nome:** Campo que armazena o nome do cadastrado.
+    - **Data_nascimento:** Campo que armazena a data de nascimento do contratado.
+    
+ - **Funcao:** Tabela que armazena registro de funções dos contratos.
+    - **Pk_funcao:** Campo identificador da funcao cadastrada.
+    - **Descricao:** Campo que armazena a descrição da função.
+ 
 
 ### 6	MODELO LÓGICO<br>
 - [MODELO LÓGICO](https://github.com/netifes/trab01/blob/master/arquivos/logico_NetIfes.brM3)   
