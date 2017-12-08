@@ -121,8 +121,8 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
     - **Pais:** Campo que armazena o pais origem do diretor.
 
 ### 6	MODELO LÓGICO<br>
-- [MODELO LÓGICO](https://github.com/netifes/trab01/blob/master/arquivos/modelo_logico_netIfes.brM3)   
- ![Alt Text](https://github.com/netifes/trab01/blob/master/arquivos/logico_NetIfes.brM3)
+- [MODELO LÓGICO](https://github.com/netifes/trab01/blob/master/arquivos/logico_NetIfes.brM3)   
+ ![Alt Text](https://github.com/netifes/trab01/blob/master/images/logico_NetIfes.png)
     
     
 ### 7	MODELO FÍSICO<br>
