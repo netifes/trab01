@@ -82,6 +82,7 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
     - **Sexo:** Campo que armazena o sexo do usário.
     - **Endereco:** Campo que armazena o endereço do usuário.
     - **Senha:** Campo que armazena a senha que o usuário irá utilizar para fazer login no provedor.
+    - **Login:** Campo que armazena o loggin que o usuário irá utilizar para fazer login no provedor.
     - **Status:** Campo que verifica se o usuário está com a conta bloqueada ou não, situação que ocorrre por exemplo que errar a senha 3 vezes (Bloqueado, Desbloqueado).
 
 - **Filme:** Tabela que armazena as informações relativas aos filmes cadastrados no sistema.
