@@ -272,12 +272,12 @@ SELECT * FROM contratado WHERE nome ILIKE '%ford%';
 ###### 1º Consulta:
 SELECT nome, date_part('year',(age(current_date, data_nascimento))) AS "'Idade'" FROM contratado WHERE nome ILIKE '%w%'; 
 
-![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_6.png)
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_11.png)
 
 ###### 2º Consulta:
 SELECT nome, sobrenome,(age(current_date, ultimo_acesso)) AS "'Tempo ultimo acesso'" FROM usuario;
 
-![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_7.png)
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_6.png)
 
 ###### 3º Consulta:
 SELECT nome, sobrenome,date_part('year',(age(current_date, data_nascimento))) AS "'Idade'" FROM usuario;
@@ -287,7 +287,7 @@ SELECT nome, sobrenome,date_part('year',(age(current_date, data_nascimento))) AS
 ###### 4º Consulta:
 SELECT id_usuario, extract(day from ultm_pgto) AS "'Dia de vencimento'" FROM pagamento;
 
-![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_11.png)
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_8.png)
 
 
 >## Marco de Entrega 03 em: (Data definida no cronograma)<br>
