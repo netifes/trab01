@@ -366,10 +366,52 @@ SELECT id_usuario, extract(day from ultm_pgto) AS "'Dia de vencimento'" FROM pag
 
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_8.png)
 
-
->## Marco de Entrega 03 em: (Data definida no cronograma)<br>
     
-#### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
+#### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS<br>
+###### 1º Update:
+UPDATE usuario SET senha = 'AKsjdf24sda7' WHERE id_usuario = 4 AND login = 'vitoriaCorreiaPereira@teleworm.us';
+Antes:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_1.png)
+Depois:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_2.png)
+
+###### 2º Update:
+UPDATE filme SET avaliacao = 4.5  WHERE titulo = 'Cidade de Deus' AND id_filme = 8;
+
+Antes:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_3.png)
+Depois:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_4.png)
+
+###### 3º Update:
+UPDATE usuario SET ultimo_acesso = current_timestamp WHERE login = 'aliceCostaAzevedo@armyspy.com' AND senha = 'aik8mogeeSai';
+Antes:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_5.png)
+Depois:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_6.png)
+
+###### 4º Update:
+UPDATE filme SET visualizacoes = 61232, id_acesso = 2 WHERE id_filme = 4;
+Antes:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_7.png)
+Depois:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_8.png)
+
+###### 5º Update:
+UPDATE usuario SET sobrenome = 'Gomes Souza' WHERE cpf = '32782754386';
+Antes:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_9.png)
+Depois:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_10.png)
+
+###### 6º Update:
+UPDATE pagamento SET numero_cartao = 45686789247853218, validade_cartao = '2019-06-25';
+Antes:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_11.png)
+Depois:
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_12.png)
+
+
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
         a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
