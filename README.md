@@ -435,12 +435,9 @@ Depois:
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.5%20ATUALIZA%C3%87%C3%83O%20E%20EXCLUS%C3%83O%20DE%20DADOS%20(M%C3%ADnimo%206)/Screenshot_12.png)
 
 
-#### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
-        a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
-        b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
-#### 9.7	CONSULTAS COM GROUP BY E FUNÇES DE AGRUPAMENTO (Mínimo 6)<br>
-#### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-#### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)
+#### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO<br>
+#### 9.7	CONSULTAS COM GROUP BY E FUNÇES DE AGRUPAMENTO<br>
+#### 9.9	CONSULTAS COM SELF JOIN E VIEW 
 - Self Join:
 Pelo fato do nosso banco estar normalizado não tem como realizarmos SELF JOIN, todas as informações estão separadas em sua respectiva tabela
 
@@ -470,5 +467,5 @@ CREATE VIEW usuariosSimples AS
 SELECT nome, sobrenome, login from usuario
 INNER JOIN rel_usuario_modalidade ON (usuario.id_usuario = rel_usuario_modalidade.id_usuario)
 WHERE id_modalidade = 2;o
-#### 9.10	SUBCONSULTAS (Mínimo 3)<br>
+#### 9.10	SUBCONSULTAS <br>
 
