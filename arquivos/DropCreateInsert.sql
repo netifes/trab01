@@ -1,29 +1,33 @@
-﻿drop table acesso cascade;
-drop table  bandeira cascade;
-drop table cep cascade;
-drop table cidade cascade;
-drop table diretor cascade;
-drop table elenco cascade;
-drop table end_complemento cascade;
-drop table estado cascade;
-drop table filme cascade;
-drop table genero cascade;
-drop table idioma cascade;
-drop table legenda cascade;
-drop table modalidade cascade;
-drop table pagamento cascade;
-drop table pais cascade;
-drop table rel_filme_diretor cascade;
-drop table rel_filme_elenco cascade;
-drop table rel_filme_genero cascade;
-drop table rel_filme_idioma cascade;
-drop table rel_filme_legenda cascade;
-drop table rel_pais_cep cascade;
-drop table rel_usuario_bandeira cascade;
-drop table rel_usuario_modalidade cascade;
-drop table rel_usuario_status cascade;
-drop table status cascade;
-drop table usuario cascade;
+DROP TABLE IF EXISTS acesso CASCADE;
+DROP TABLE IF EXISTS bandeira CASCADE;
+DROP TABLE IF EXISTS cep CASCADE;
+DROP TABLE IF EXISTS cidade CASCADE;
+DROP TABLE IF EXISTS contratado CASCADE; 
+DROP TABLE IF EXISTS end_complemento CASCADE;
+DROP TABLE IF EXISTS estado CASCADE;
+DROP TABLE IF EXISTS filme CASCADE;
+DROP TABLE IF EXISTS funcao CASCADE; 
+DROP TABLE IF EXISTS genero CASCADE;
+DROP TABLE IF EXISTS idioma CASCADE;
+DROP TABLE IF EXISTS legenda CASCADE;
+DROP TABLE IF EXISTS modalidade CASCADE;
+DROP TABLE IF EXISTS pagamento CASCADE;
+DROP TABLE IF EXISTS pais CASCADE;
+DROP TABLE IF EXISTS rel_Contratado_Funcao CASCADE;
+DROP TABLE IF EXISTS rel_Contratado_Filme CASCADE; 
+DROP TABLE IF EXISTS rel_filme_genero CASCADE;
+DROP TABLE IF EXISTS rel_filme_idioma CASCADE;
+DROP TABLE IF EXISTS rel_filme_legenda CASCADE;
+DROP TABLE IF EXISTS rel_pais_cep CASCADE;
+DROP TABLE IF EXISTS rel_usuario_bandeira CASCADE;
+DROP TABLE IF EXISTS rel_usuario_contato CASCADE;
+DROP TABLE IF EXISTS rel_usuario_modalidade CASCADE;
+DROP TABLE IF EXISTS rel_usuario_status CASCADE;
+DROP TABLE IF EXISTS status CASCADE;
+DROP TABLE IF EXISTS tipo_Contato CASCADE; 
+DROP TABLE IF EXISTS usuario CASCADE;
+DROP TABLE IF EXISTS historico_visualizacao CASCADE;
+
 /*CREATE TABLE*/
 CREATE TABLE pais(
 	id_Pais SERIAL NOT NULL,
@@ -45,21 +49,50 @@ CREATE TABLE filme (
     capa VARCHAR(255),
     video VARCHAR(255),
     id_Pais INT NOT NULL,
-    avaliacao INT,
+    avaliacao FLOAT,
     visualizacoes INT,
     id_Acesso INT NOT NULL,
     PRIMARY KEY(id_Filme),
     FOREIGN KEY(id_Pais) REFERENCES pais(id_Pais),
     FOREIGN KEY(id_Acesso) REFERENCES acesso(id_Acesso)
 );
+CREATE TABLE contratado(
+	id_Contratado SERIAL NOT NULL,
+    nome VARCHAR (50),
+    data_nascimento DATE,
+    PRIMARY KEY(id_Contratado)
+);
+CREATE TABLE funcao(
+	id_Funcao SERIAL NOT NULL,
+    descricao VARCHAR (50),
+    PRIMARY KEY(id_Funcao)
+);
+CREATE TABLE rel_Contratado_Funcao(
+	id_Contratado INT NOT NULL,
+    id_Funcao INT NOT NULL,
+    FOREIGN KEY(id_Contratado) REFERENCES contratado(id_Contratado),
+    FOREIGN KEY(id_Funcao) REFERENCES funcao(id_Funcao)
+);
+CREATE TABLE rel_Contratado_Filme(
+	id_Filme INT NOT NULL,
+    id_Contratado INT NOT NULL,
+    FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
+    FOREIGN KEY(id_Contratado) REFERENCES contratado(id_Contratado)
+);
+CREATE TABLE tipo_Contato(
+	id_Tipo_Contato SERIAL NOT NULL,
+    descricao VARCHAR(50),
+    PRIMARY KEY(id_Tipo_Contato)
+);
 CREATE TABLE usuario(
 	id_Usuario SERIAL NOT NULL,
-    email VARCHAR(50),
+    login VARCHAR(50),
     senha VARCHAR(255),
     cpf BIGINT,
     ultimo_acesso TIMESTAMP,
     nome VARCHAR(50),
     sobrenome VARCHAR(50),
+    data_nascimento DATE,
     PRIMARY KEY(id_Usuario)
 );
 CREATE TABLE pagamento (
@@ -97,11 +130,6 @@ CREATE TABLE end_complemento(
     numero INT,
     FOREIGN KEY(id_Usuario) REFERENCES usuario(id_Usuario)
 );
-CREATE TABLE diretor(
-	id_Direcao SERIAL NOT NULL,
-    diretor VARCHAR(50),
-    PRIMARY KEY(id_Direcao)
-);
 CREATE TABLE status(
 	id_Status SERIAL NOT NULL,
     status VARCHAR(50),
@@ -111,6 +139,15 @@ CREATE TABLE modalidade (
 	id_Modalidade SERIAL NOT NULL,
     modalidade VARCHAR(50),
     PRIMARY KEY(id_Modalidade)
+);
+CREATE TABLE rel_Usuario_Contato(
+	id_Contato SERIAL NOT NULL,
+    contato VARCHAR (50),
+    id_Usuario INT NOT NULL,
+    id_Tipo_Contato INT NOT NULL,
+    PRIMARY KEY(id_Contato),
+    FOREIGN KEY(id_Usuario) REFERENCES usuario(id_Usuario),
+    FOREIGN KEY(id_Tipo_Contato) REFERENCES tipo_Contato(id_Tipo_Contato)
 );
 CREATE TABLE rel_Usuario_Status(
 	id_Usuario INT NOT NULL,
@@ -146,28 +183,11 @@ CREATE TABLE genero(
     genero VARCHAR(50),
     PRIMARY KEY(id_Genero)
 );
-CREATE TABLE elenco(
-	id_Elenco SERIAL NOT NULL,
-    elenco VARCHAR(50),
-    PRIMARY KEY(id_Elenco)
-);
-CREATE TABLE rel_Filme_Elenco(
-	id_Filme INT NOT NULL,
-    id_Elenco INT NOT NULL,
-    FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
-    FOREIGN KEY(id_Elenco) REFERENCES elenco(id_Elenco)
-);
 CREATE TABLE rel_Filme_Genero(
 	id_Filme INT NOT NULL,
     id_Genero INT NOT NULL,
     FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
     FOREIGN KEY(id_Genero) REFERENCES genero(id_Genero)
-);
-CREATE TABLE rel_Filme_Diretor(
-	id_Filme INT NOT NULL,
-    id_Direcao INT NOT NULL,
-    FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
-    FOREIGN KEY(id_Direcao) REFERENCES diretor(id_Direcao)
 );
 CREATE TABLE idioma(
 	id_Idioma SERIAL NOT NULL,
@@ -191,6 +211,15 @@ CREATE TABLE rel_Filme_Legenda(
     FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
     FOREIGN KEY(id_Legenda) REFERENCES legenda(id_Legenda)
 );
+CREATE TABLE historico_visualizacao (
+    id_Historico_visulizacao Serial,
+	id_Usuario INT NOT NULL,
+    id_Filme INT NOT NULL,
+    data_inicio TIMESTAMP,
+    data_fim TIMESTAMP,
+    FOREIGN KEY(id_Usuario) REFERENCES usuario(id_usuario),
+    FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme) 
+);
 /*INSERT DADOS*/
 INSERT INTO acesso (acesso) 
 	VALUES ('Indisponível'), 
@@ -201,66 +230,68 @@ INSERT INTO bandeira (bandeira)
     ('MASTERCARD'), 
     ('BANESCARD');
     
-INSERT INTO diretor (diretor) 
-	VALUES ('Peter Jackson'), 
-    ('Francis Ford Coppola'), 
-    ('Robert Zemeckis'),
-    ('George Lucas'),
-    ('J. J. Abrams'),
-    ('Christopher Nolan'),
-    ('Guel Arraes'),
-    ('Fernando Meirelles'),
-    ('Allen Hughes '),
-    ('Chris Buck'),
-    ('Jennifer Lee');
-
-INSERT INTO elenco (elenco)
-	VALUES ('Elijah Wood'),
-    ('Ian McKellen'),
-    ('Liv Tyler'),
-    ('Viggo Mortensen'),
-    ('Sean Astin'),
-    ('Cate Blanchett'),
-    ('John Rhys-Davies'),
-    ('Billy Boyd'),
-    ('Marlon Brando'),
-    ('Al Pacino'),
-    ('James Caan'),
-    ('Richard Castellano'),
-    ('Robert Duvall'),
-    ('Sterling Hayden'),
-    ('John Marley'),
-    ('Tom Hanks'),
-    ('Robin Wright'),
-    ('Gary Sinise'),
-    ('Mark Hamill'),
-    ('Harrison Ford'),
-    ('Carrie Fisher'),
-    ('Billy Dee Williams'),
-    ('Anthony Daniels'),
-    ('Daisy Ridley'),
-    ('John Boyega'),
-    ('Oscar Isaac'),
-    ('Adam Driver'),
-    ('Christian Bale'),
-    ('Heath Ledger'),
-    ('Aaron Eckhar'),
-    ('Matheus Nachtergaele'),
-    ('Selton Mello'),
-    ('Denise Fraga'),
-    ('Alexandre Rodrigues'),
-    ('Leandro Firmino da Hora'),
-    ('Phellipe Haagensen'),
-    ('Denzel Washington'),
-    ('Mila Kunis'),
-    ('Gary Oldman'),
-    ('Kristen Bell'),
-    ('Idina Menzel'),
-    ('Jonathan Groff'),
-    ('Josh Gad'),
-    ('Santino Fontana'),
-    ('Alan Tudyk');
+INSERT INTO funcao (descricao)
+	VALUES ('Ator'),
+    ('Diretor');
     
+INSERT INTO contratado (nome, data_nascimento) 
+	VALUES ('Peter Jackson', '1999-01-02'), 
+    ('Francis Ford Coppola', '1999-02-20'), 
+    ('Robert Zemeckis', '1999-03-03'),
+    ('George Lucas', '1999-04-30'),
+    ('J. J. Abrams', '1999-05-04'),
+    ('Christopher Nolan', '1999-06-05'),
+    ('Guel Arraes', '1998-07-06'),
+    ('Fernando Meirelles', '1998-08-07'),
+    ('Allen Hughes ', '1998-09-08'),
+    ('Chris Buck', '1998-10-15'),
+    ('Jennifer Lee', '1997-11-25'),
+    ('Elijah Wood', '1997-12-22'),
+    ('Ian McKellen', '1989-01-23'),
+    ('Liv Tyler', '1989-02-16'),
+    ('Viggo Mortensen', '1989-03-24'),
+    ('Sean Astin', '1989-04-26'),
+    ('Cate Blanchett', '1989-05-27'),
+    ('John Rhys-Davies', '1989-06-01'),
+    ('Billy Boyd', '1989-07-10'),
+    ('Marlon Brando', '1989-08-11'),
+    ('Al Pacino', '1989-09-19'),
+    ('James Caan', '1989-10-22'),
+    ('Richard Castellano', '1989-11-27'),
+    ('Robert Duvall', '1988-12-04'),
+    ('Sterling Hayden', '1988-01-29'),
+    ('John Marley', '1988-02-22'),
+    ('Tom Hanks', '1988-03-21'),
+    ('Robin Wright', '1988-04-14'),
+    ('Gary Sinise', '1988-05-13'),
+    ('Mark Hamill', '1988-06-23'),
+    ('Harrison Ford', '1987-09-29'),
+    ('Carrie Fisher', '1987-12-25'),
+    ('Billy Dee Williams', '1987-02-22'),
+    ('Anthony Daniels', '1987-04-14'),
+    ('Daisy Ridley', '1987-06-28'),
+    ('John Boyega', '1987-08-30'),
+    ('Oscar Isaac', '1987-10-11'),
+    ('Adam Driver', '1987-11-22'),
+    ('Christian Bale', '1987-12-30'),
+    ('Heath Ledger', '1986-05-15'),
+    ('Aaron Eckhar', '1986-08-27'),
+    ('Matheus Nachtergaele', '1986-12-13'),
+    ('Selton Mello', '1985-03-03'),
+    ('Denise Fraga', '1985-05-21'),
+    ('Alexandre Rodrigues', '1985-07-17'),
+    ('Leandro Firmino da Hora', '1985-09-29'),
+    ('Phellipe Haagensen', '1987-11-13'),
+    ('Denzel Washington', '1984-04-24'),
+    ('Mila Kunis', '1982-07-17'),
+    ('Gary Oldman', '1981-11-30,'),
+    ('Kristen Bell', '1980-07-19'),
+    ('Idina Menzel', '1979-01-01'),
+    ('Jonathan Groff', '1978-02-09'),
+    ('Josh Gad', '1977-06-07'),
+    ('Santino Fontana', '1976-08-23'),
+    ('Alan Tudyk', '1975-11-12');
+
 INSERT INTO genero (genero)
 	VALUES ('Animação'),
     ('Aventura'),
@@ -335,17 +366,22 @@ INSERT INTO status (status)
 	VALUES ('Normal'),
     ('Bloqueado');
     
-INSERT INTO usuario (email, senha, ultimo_acesso, nome, sobrenome, cpf)
-	VALUES ('isabellaGomesSousa@jourrapide.com', 'jndsuiHi8h', '2017-09-06 18:16:24', 'Isabella', 'Gomes Sousa', 32782754386),
-    ('brendaSouzaGomes@rhyta.com', 'queiP3lah5', '2017-09-06 15:22:03', 'Brenda', 'Souza Gomes', 26318271473),
-    ('matheusbarbosa@gmail.com', 'aik8mogeeSai', '2017-02-03 22:34:19', 'Matheus', 'Barbosa', 76538418481),
-    ('vitoriaCorreiaPereira@teleworm.us', 'Iciefie2xai4g', '2017-05-22 17:59:57', 'Vitoria', 'Correia Pereira', 50717187233),
-    ('juliabrandao@hotmail.com', 'Iciefie2xai4g', '2017-02-10 13:24:02', 'Julia', 'Brandão', 55774684423),
-    ('eduardoAraujoRocha@armyspy.com', 'ceecoph8EK0', '2017-09-04 19:10:14', 'Eduardo Araujo', 'Rocha', 46208317940),
-    ('aliceCostaAzevedo@armyspy.com', 'aik8mogeeSai', '2017-10-27 18:25:02', 'Alice', 'Costa Azevedo', 37801845676),
-    ('enzoOliveiraPinto@armyspy.com', 'aiw2taij9Fo', '2017-09-07 00:33:12', 'Enzo', 'Liveira Pinto', 77444792208),
-    ('silvawallace@gmail.com', 'aik8mogeeSai', '2017-09-04 23:11:08', 'Wallace', 'Silva', 30284609633),
-    ('estevanCunhaCastro@dayrep.com', 'abcxi123', '2017-09-05 16:25:34', 'Estevan', 'Cunha Castro', 47718288064);
+INSERT INTO tipo_Contato (descricao)
+	VALUES ('Email'),
+    ('Celular'),
+    ('Telefone');
+
+INSERT INTO usuario (login, senha, ultimo_acesso, nome, sobrenome, cpf, data_nascimento)
+	VALUES ('isabellaGomesSousa@jourrapide.com', 'jndsuiHi8h', '2017-09-06 18:16:24', 'Isabella', 'Gomes Sousa', 32782754386, '1995-12-15'),
+    ('brendaSouzaGomes@rhyta.com', 'queiP3lah5', '2017-09-06 15:22:03', 'Brenda', 'Souza Gomes', 26318271473, '1994-03-05'),
+    ('matheusbarbosa@gmail.com', 'aik8mogeeSai', '2017-02-03 22:34:19', 'Matheus', 'Barbosa', 76538418481, '1989-05-19'),
+    ('vitoriaCorreiaPereira@teleworm.us', 'Iciefie2xai4g', '2017-05-22 17:59:57', 'Vitoria', 'Correia Pereira', 50717187233, '1975-05-17'),
+    ('juliabrandao@hotmail.com', 'Iciefie2xai4g', '2017-02-10 13:24:02', 'Julia', 'Brandão', 55774684423, '1987-11-12'),
+    ('eduardoAraujoRocha@armyspy.com', 'ceecoph8EK0', '2017-09-04 19:10:14', 'Eduardo Araujo', 'Rocha', 46208317940, '1999-07-08'),
+    ('aliceCostaAzevedo@armyspy.com', 'aik8mogeeSai', '2017-10-27 18:25:02', 'Alice', 'Costa Azevedo', 37801845676, '2002-04-24'),
+    ('enzoOliveiraPinto@armyspy.com', 'aiw2taij9Fo', '2017-09-07 00:33:12', 'Enzo', 'Liveira Pinto', 77444792208, '1996-02-18'),
+    ('silvawallace@gmail.com', 'aik8mogeeSai', '2017-09-04 23:11:08', 'Wallace', 'Silva', 30284609633, '1993-03-27'),
+    ('estevanCunhaCastro@dayrep.com', 'abcxi123', '2017-09-05 16:25:34', 'Estevan', 'Cunha Castro', 47718288064, '1983-06-16');
     
 INSERT INTO cidade (cidade) 
 	VALUES ('Serra'), 
@@ -409,68 +445,26 @@ INSERT INTO pagamento (id_Usuario, ultm_pgto, prox_pgto, numero_cartao, nome_car
     (8, '2015-10-26', '2015-11-26', 5298458894254671, 'Enzo L Pinto', '2021-08-31'),
     (9, '2015-12-31', '2016-01-31', 4539441417994785, 'Alice C Azevedo', '2021-05-31'),
     (10, '2015-12-31', '2016-01-31', 5376669388825587, 'Estevan C Castro', '2021-08-31');
-
-INSERT INTO rel_filme_diretor (id_Direcao, id_Filme)
-	VALUES (1, 1),
-    (2, 2),
-    (3, 3),
-    (4, 4),
-    (5, 5),
-    (6, 6),
-    (7, 7),
-    (8, 8),
-    (9, 9),
-    (10, 10),
-    (11, 10);
     
-INSERT INTO rel_filme_elenco (id_Filme, id_Elenco)
-	VALUES (1, 1),
-    (1, 2),
-    (1, 3),
-    (1, 4),
-    (1, 5),
-    (1, 6),
-    (1, 7),
-    (1, 8),
-    (2, 9),
-    (2, 10),
-    (2, 11),
-    (2, 12),
-    (2, 13),
-    (2, 14),
-    (2, 15),
-    (3, 16),
-    (3, 17),
-    (3, 18),
-    (4, 19),
-    (4, 20),
-    (4, 21),
-    (4, 22),
-    (4, 23),
-    (5, 24),
-    (5, 25),
-    (5, 26),
-    (5, 27),
-    (5, 20),
-    (5, 19),
-    (6, 28),
-    (6, 29),
-    (6, 30),
-    (7, 31),
-    (7, 32),
-    (7, 33),
-    (8, 34),
-    (8, 35),
-    (8, 36),
-    (9, 37),
-    (9, 38),
-    (9, 39),
-    (10, 40),
-    (10, 41),
-    (10, 42),
-    (10, 43),
-    (10, 44),
-    (10, 45);
+INSERT INTO rel_Usuario_Contato(id_Usuario, id_Tipo_contato, contato)
+	VALUES (1, 1,'isabellaGomesSousa@jourrapide.com'),
+    (1,2,'998352120'),
+    (2,1,'brendaSouzaGomes@rhyta.com'),
+    (2,2,'988372425'),
+    (2,3,'32348596'),
+    (3,1,'matheusbarbosa@gmail.com'),
+    (4,1,'vitoriaCorreiaPereira@teleworm.us'),
+    (5,1,'juliabrandao@hotmail.com'),
+    (6,1,'eduardoAraujoRocha@armyspy.com'),
+    (6,3,'31315545'),
+    (7,1,'aliceCostaAzevedo@armyspy.com'),
+    (7,2,'998660323'),
+    (8,1,'enzoOliveiraPinto@armyspy.com'),
+    (8,2,'995256323'),
+    (8,3,'35254595'),
+    (9,1,'silvawallace@gmail.com'),
+    (10,1,'estevanCunhaCastro@dayrep.com'),
+    (10,2,'995157222');
     
 INSERT INTO rel_filme_genero (id_Filme, id_Genero)
 	VALUES (1, 2),
@@ -555,3 +549,137 @@ INSERT INTO rel_usuario_status (id_Usuario, id_Status)
     (1,1),
     (1,1);
     
+INSERT INTO rel_Contratado_Funcao(id_Contratado, id_Funcao)
+	VALUES (1,2),
+    (2,2),
+    (3,2),
+    (4,2),
+    (5,2),
+    (6,2),
+    (7,2),
+    (8,2),
+    (9,2),
+    (10,2),
+    (11,2),
+    (12,1),
+    (13,1),
+    (14,1),
+    (15,1),
+    (16,1),
+    (17,1),
+    (18,1),
+    (19,1),
+    (20,1),
+    (21,1),
+    (22,1),
+    (23,1),
+    (24,1),
+    (25,1),
+    (26,1),
+    (27,1),
+    (28,1),
+    (29,1),
+    (30,1),
+    (31,1),
+    (32,1),
+    (33,1),
+    (34,1),
+    (35,1),
+    (36,1),
+    (37,1),
+    (38,1),
+    (39,1),
+    (40,1),
+    (41,1),
+    (42,1),
+    (43,1),
+    (44,1),
+    (45,1),
+    (46,1),
+    (47,1),
+    (48,1),
+    (49,1),
+    (50,1),
+    (51,1),
+    (52,1),
+    (53,1),
+    (54,1),
+    (55,1),
+    (56,1);
+    
+INSERT INTO rel_Contratado_Filme(id_Contratado, id_Filme)
+	VALUES (1,1),
+    (2,2),
+    (3,3),
+    (4,4),
+    (5,5),
+    (6,6),
+    (7,7),
+    (8,8),
+    (9,9),
+    (10,10),
+    (11,10),
+    (12,1),
+    (13,1),
+    (14,1),
+    (15,1),
+    (16,1),
+    (17,1),
+    (18,1),
+    (19,1),
+    (20,2),
+    (21,2),
+    (22,2),
+    (23,2),
+    (24,2),
+    (25,2),
+    (26,3),
+    (27,3),
+    (28,3),
+    (29,4),
+    (30,4),
+    (31,4),
+    (32,4),
+    (33,4),
+    (34,5),
+    (35,5),
+    (36,5),
+    (37,5),
+    (38,5),
+    (39,5),
+    (40,6),
+    (41,6),
+    (42,6),
+    (43,7),
+    (44,7),
+    (45,7),
+    (46,8),
+    (47,8),
+    (48,8),
+    (49,9),
+    (50,9),
+    (51,9),
+    (52,10),
+    (53,10),
+    (54,10),
+    (55,10),
+    (56,10);
+
+INSERT INTO historico_visualizacao(id_usuario, id_Filme, data_inicio, data_fim)
+	VALUES(1,5,'2017-11-05 11:54:12', '2017-11-05 14:10:22'),
+    (1,1,'2017-11-05 14:16:23', '2017-11-05 19:23:11'),
+    (1,7,'2017-11-06 18:33:14', '2017-11-06 20:01:25'),
+    (2,7,'2017-11-04 15:35:58', '2017-11-04 18:03:14'),
+    (3,1,'2017-12-01 14:21:13', '2017-12-01 16:15:41'),
+    (3,2,'2017-12-01 18:21:14', '2017-12-01 22:54:12'),
+    (3,3,'2017-12-01 23:54:12', '2017-12-02 04:54:11'),
+    (3,6,'2017-12-21 13:01:19', '2017-12-22 17:22:01'),
+    (4,8,'2018-01-15 15:07:19', '2018-01-17 17:33:01'),
+    (5,4,'2018-01-15 15:01:56', '2017-01-15 18:02:03'),
+    (6,7,'2017-11-04 15:35:58', '2017-11-04 18:03:14'),
+    (7,8,'2017-12-01 14:21:13', '2017-12-01 16:15:41'),
+    (7,9,'2017-12-01 18:21:14', '2017-12-01 22:54:12'),
+    (7,10,'2017-12-01 23:54:12', '2017-12-02 04:54:11'),
+    (7,4,'2017-12-21 13:01:19', '2017-12-22 17:22:01'),
+    (8,3,'2017-11-05 14:16:23', '2017-11-05 19:23:11'),
+    (10,1,'2017-10-05 13:10:09', '2017-10-05 17:11');

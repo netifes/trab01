@@ -18,21 +18,50 @@ CREATE TABLE filme (
     capa VARCHAR(255),
     video VARCHAR(255),
     id_Pais INT NOT NULL,
-    avaliacao INT,
+    avaliacao FLOAT,
     visualizacoes INT,
     id_Acesso INT NOT NULL,
     PRIMARY KEY(id_Filme),
     FOREIGN KEY(id_Pais) REFERENCES pais(id_Pais),
     FOREIGN KEY(id_Acesso) REFERENCES acesso(id_Acesso)
 );
+CREATE TABLE contratado(
+	id_Contratado SERIAL NOT NULL,
+    nome VARCHAR (50),
+    data_nascimento DATE,
+    PRIMARY KEY(id_Contratado)
+);
+CREATE TABLE funcao(
+	id_Funcao SERIAL NOT NULL,
+    descricao VARCHAR (50),
+    PRIMARY KEY(id_Funcao)
+);
+CREATE TABLE rel_Contratado_Funcao(
+	id_Contratado INT NOT NULL,
+    id_Funcao INT NOT NULL,
+    FOREIGN KEY(id_Contratado) REFERENCES contratado(id_Contratado),
+    FOREIGN KEY(id_Funcao) REFERENCES funcao(id_Funcao)
+);
+CREATE TABLE rel_Contratado_Filme(
+	id_Filme INT NOT NULL,
+    id_Contratado INT NOT NULL,
+    FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
+    FOREIGN KEY(id_Contratado) REFERENCES contratado(id_Contratado)
+);
+CREATE TABLE tipo_Contato(
+	id_Tipo_Contato SERIAL NOT NULL,
+    descricao VARCHAR(50),
+    PRIMARY KEY(id_Tipo_Contato)
+);
 CREATE TABLE usuario(
 	id_Usuario SERIAL NOT NULL,
-    cpf BIGINT,
-    email VARCHAR(50),
+    login VARCHAR(50),
     senha VARCHAR(255),
+    cpf BIGINT,
     ultimo_acesso TIMESTAMP,
     nome VARCHAR(50),
     sobrenome VARCHAR(50),
+    data_nascimento DATE,
     PRIMARY KEY(id_Usuario)
 );
 CREATE TABLE pagamento (
@@ -70,11 +99,6 @@ CREATE TABLE end_complemento(
     numero INT,
     FOREIGN KEY(id_Usuario) REFERENCES usuario(id_Usuario)
 );
-CREATE TABLE diretor(
-	id_Direcao SERIAL NOT NULL,
-    diretor VARCHAR(50),
-    PRIMARY KEY(id_Direcao)
-);
 CREATE TABLE status(
 	id_Status SERIAL NOT NULL,
     status VARCHAR(50),
@@ -84,6 +108,15 @@ CREATE TABLE modalidade (
 	id_Modalidade SERIAL NOT NULL,
     modalidade VARCHAR(50),
     PRIMARY KEY(id_Modalidade)
+);
+CREATE TABLE rel_Usuario_Contato(
+	id_Contato SERIAL NOT NULL,
+    contato VARCHAR (50),
+    id_Usuario INT NOT NULL,
+    id_Tipo_Contato INT NOT NULL,
+    PRIMARY KEY(id_Contato),
+    FOREIGN KEY(id_Usuario) REFERENCES usuario(id_Usuario),
+    FOREIGN KEY(id_Tipo_Contato) REFERENCES tipo_Contato(id_Tipo_Contato)
 );
 CREATE TABLE rel_Usuario_Status(
 	id_Usuario INT NOT NULL,
@@ -119,28 +152,11 @@ CREATE TABLE genero(
     genero VARCHAR(50),
     PRIMARY KEY(id_Genero)
 );
-CREATE TABLE elenco(
-	id_Elenco SERIAL NOT NULL,
-    elenco VARCHAR(50),
-    PRIMARY KEY(id_Elenco)
-);
-CREATE TABLE rel_Filme_Elenco(
-	id_Filme INT NOT NULL,
-    id_Elenco INT NOT NULL,
-    FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
-    FOREIGN KEY(id_Elenco) REFERENCES elenco(id_Elenco)
-);
 CREATE TABLE rel_Filme_Genero(
 	id_Filme INT NOT NULL,
     id_Genero INT NOT NULL,
     FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
     FOREIGN KEY(id_Genero) REFERENCES genero(id_Genero)
-);
-CREATE TABLE rel_Filme_Diretor(
-	id_Filme INT NOT NULL,
-    id_Direcao INT NOT NULL,
-    FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
-    FOREIGN KEY(id_Direcao) REFERENCES diretor(id_Direcao)
 );
 CREATE TABLE idioma(
 	id_Idioma SERIAL NOT NULL,
@@ -163,4 +179,13 @@ CREATE TABLE rel_Filme_Legenda(
     id_Legenda INT NOT NULL,
     FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme),
     FOREIGN KEY(id_Legenda) REFERENCES legenda(id_Legenda)
+);
+CREATE TABLE historico_visualizacao (
+    id_Historico_visulizacao Serial,
+	id_Usuario INT NOT NULL,
+    id_Filme INT NOT NULL,
+    data_inicio TIMESTAMP,
+    data_fim TIMESTAMP,
+    FOREIGN KEY(id_Usuario) REFERENCES usuario(id_usuario),
+    FOREIGN KEY(id_Filme) REFERENCES filme(id_Filme) 
 );
