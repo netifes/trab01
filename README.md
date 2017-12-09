@@ -149,6 +149,84 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
    
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS<br>
 
+SELECT * FROM acesso; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/acesso.png)
+
+SELECT * FROM bandeira; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/bandeira.png)
+
+SELECT * FROM cep; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/cep.png)
+
+SELECT * FROM contratado; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/contratados.png)
+
+SELECT * FROM end_complemento; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/end_complemento.png)
+
+SELECT * FROM estado; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/estadp.png)
+
+SELECT * FROM filme; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/filme.png)
+
+SELECT * FROM funcao; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/funcao.png)
+
+SELECT * FROM genero; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/genero.png)
+
+SELECT * FROM idioma; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/idioma.png)
+
+SELECT * FROM legenda; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/legenda.png)
+
+SELECT * FROM modalidade; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/modalidade.png)
+
+SELECT * FROM pagamento; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/pagamento.png)
+
+SELECT * FROM pais; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/pais.png)
+
+SELECT * FROM rel_contratado_filme; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/rel_contratado_filme.png)
+
+SELECT * FROM rel_contratado_funcao; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/rel_contratado_funcao.png)
+
+SELECT * FROM rel_filme_genero; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/rel_filme_genero.png)
+
+SELECT * FROM rel_filme_idioma; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/rel_filme_idioma.png)
+
+SELECT * FROM rel_filme_legenda; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/rel_filme_legenda.png)
+
+SELECT * FROM rel_pais_cep; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/rel_pais_cep.png)
+
+SELECT * FROM rel_usuario_bandeira; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/rel_usuario_bandeira.png)
+
+SELECT * FROM rel_usuario_contato; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/rel_usuario_contato.png)
+
+SELECT * FROM rel_usuario_status; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/rel_usuario_status.png)
+
+SELECT * FROM status; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/status.png)
+
+SELECT * FROM tipo_contato; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/tipo_contato.png)
+
+SELECT * FROM usuario; <br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.1%20CONSULTAS%20DAS%20TABELAS%20COM%20TODOS%20OS%20DADOS%20INSERIDOS/usuario.png)
+
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE <br>
 ###### 1º Consulta:
