@@ -151,7 +151,31 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
 
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE <br>
+###### 1º Consulta:
+SELECT * FROM cep WHERE cep = 74477056;
 
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.2%20CONSULTAS%20DAS%20TABELAS%20COM%20FILTROS%20WHERE/Screenshot_1.png)
+
+###### 2º Consulta:
+
+SELECT * FROM filme WHERE duracao > 120;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.2%20CONSULTAS%20DAS%20TABELAS%20COM%20FILTROS%20WHERE/Screenshot_2.png)
+
+###### 3º Consulta:
+SELECT * FROM filme WHERE avaliacao = 5; 
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.2%20CONSULTAS%20DAS%20TABELAS%20COM%20FILTROS%20WHERE/Screenshot_3.png)
+
+###### 4º Consulta:
+SELECT * FROM usuario WHERE nome = 'Enzo';
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.2%20CONSULTAS%20DAS%20TABELAS%20COM%20FILTROS%20WHERE/Screenshot_4.png)
+
+###### 5º Consulta:
+SELECT * FROM usuario WHERE cpf = 46208317940;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.2%20CONSULTAS%20DAS%20TABELAS%20COM%20FILTROS%20WHERE/Screenshot_5.png)
 
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS
@@ -168,36 +192,41 @@ SELECT * FROM filme WHERE titulo = 'Batman' AND duracao > 120;<br>
 
 
 ###### 3º Consulta:
-SELECT * FROM filme WHERE titulo = 'Batman' AND duracao > 120;<br>
+SELECT * FROM filme WHERE avaliacao > 2 OR duracao < 100;<br>
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_3.png)
 
 
 ###### 4º Consulta:
 SELECT * FROM usuario WHERE login = 'brendaSouzaGomes@rhyta.com' AND senha = 'queiP3lah5'; 
-![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_4.png)
 
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_4.png)
 
 ###### 5º Consulta:
 Select * from usuario where nome = 'Matheus' or senha = 'jndsuiHi8h';
-![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_5.png)
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_6.png)
 
 - Criar no mínimo 3 consultas com operadores aritméticos 
 ###### 1º Consulta:
 SELECT  visualizacoes, ((visualizacoes*1.0/ 299824) *100)  AS mediaVisualizacoes FROM filme;
-![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_6.png)
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_5.png)
 
 - Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
 
 ###### 1º Consulta:
 SELECT capa AS "'Link do cartaz do filme'", titulo AS "'Nome do Filme'" FROM filme WHERE titulo = 'Frozen';
+
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_7.png)
 
 ###### 2º Consulta:
 SELECT ultm_pgto AS "'Data do ultimo pagamento'", prox_pgto AS "'Data do proximo pagamento'" FROM pagamento WHERE  ultm_pgto > '2017-01-01';
+
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_8.png)
 
 ###### 3º Consulta:
 SELECT id_funcao AS "'Numero da funcao'", descricao AS "'Nome da Funcao'" FROM funcao WHERE descricao = 'Ator';
+
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_9.png)
      
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE<br>
