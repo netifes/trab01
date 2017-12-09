@@ -231,30 +231,51 @@ SELECT id_funcao AS "'Numero da funcao'", descricao AS "'Nome da Funcao'" FROM f
      
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE<br>
 - Consultas que envolvam like ou ilike
-
+###### 1º Consulta:
 SELECT * FROM filme WHERE sinopse LIKE '%Star%' or  subtitulo LIKE '%trevas%';
 
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_1.png
+
+###### 2º Consulta:
 SELECT * FROM filme WHERE sinopse LIKE '%amor%'; 
 
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_2.png
+
+###### 3º Consulta:
 SELECT * FROM filme WHERE titulo LIKE 'F%'; 
 
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_3.png
+
+###### 4º Consulta:
 SELECT * FROM usuario WHERE nome LIKE '%Matheus%'; 
 
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_4.png
+
+###### 5º Consulta:
 SELECT * FROM usuario WHERE email LIKE '%gmail%'; 
 
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_5.png
+
+###### 6º Consulta:
 SELECT * FROM cep WHERE endereco LIKE '%Rua%'; 
-9
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_9.png
+
+
+###### 7º Consulta:
 SELECT * FROM contratado WHERE nome ILIKE '%ford%';
-10
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_10.png
+
 
 - Criar uma consulta para cada tipo de função data apresentada.
-
+###### 1º Consulta:
 SELECT nome, date_part('year',(age(current_date, data_nascimento))) AS "'Idade'" FROM contratado WHERE nome ILIKE '%w%'; 
-
+###### 2º Consulta:
 SELECT nome, sobrenome,(age(current_date, ultimo_acesso)) AS "'Tempo ultimo acesso'" FROM usuario;
-
+###### 3º Consulta:
 SELECT nome, sobrenome,date_part('year',(age(current_date, data_nascimento))) AS "'Idade'" FROM usuario;
-
+###### 4º Consulta:
 SELECT id_usuario, extract(day from ultm_pgto) AS "'Dia de vencimento'" FROM pagamento;
 
 >## Marco de Entrega 03 em: (Data definida no cronograma)<br>
