@@ -575,17 +575,17 @@ WHERE id_modalidade = 2;o
 SELECT nome, sobrenome from usuario WHERE sobrenome IN(
   SELECT sobrenome from usuario WHERE nome ILIKE '%h%');
 
-![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.10%20SUBCONSULTAS/Screenshot_1.png)
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.10%20SUBCONSULTAS/Screenshot_4.png)
 
 ###### 2º Subconsulta:
-SELECT nome, id_usuario from usuario WHERE data_nascimento IN(
-  SELECT data_nascimento from usuario WHERE id_usuario > 2);
+SELECT * FROM filme WHERE duracao IN(
+   SELECT duracao FROM filme WHERE ano > 2010);
 
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.10%20SUBCONSULTAS/Screenshot_2.png)
 
 ###### 3º Subconsulta:
-SELECT * FROM filme WHERE duracao IN(
-   SELECT duracao FROM filme WHERE ano > 2010);
+SELECT nome, id_usuario from usuario WHERE data_nascimento IN(
+  SELECT data_nascimento from usuario WHERE id_usuario > 2);
 
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.10%20SUBCONSULTAS/Screenshot_1.png)
 
