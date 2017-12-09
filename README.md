@@ -436,7 +436,63 @@ Depois:
 
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO<br>
+
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇES DE AGRUPAMENTO<br>
+
+###### 1º Consulta:
+SELECT usuario.nome, filme.titulo, data_inicio, data_fim 
+FROM historico_visualizacao 
+INNER JOIN usuario ON(usuario.id_usuario = historico_visualizacao.id_usuario)
+INNER JOIN filme ON(filme.id_filme = historico_visualizacao.id_filme)
+GROUP BY usuario.nome, filme.titulo, data_inicio, data_fim;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.7%20CONSULTAS%20COM%20GROUP%20BY%20E%20FUN%C3%87ES%20DE%20AGRUPAMENTO/Screenshot_1.png)
+
+###### 2º Consulta:
+SELECT nome, sobrenome, cpf, data_nascimento
+FROM usuario
+WHERE UPPER(nome) LIKE UPPER('%a%')
+AND UPPER(login) LIKE UPPER('%@gmail.com%')
+GROUP BY nome, sobrenome, cpf, data_nascimento;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.7%20CONSULTAS%20COM%20GROUP%20BY%20E%20FUN%C3%87ES%20DE%20AGRUPAMENTO/Screenshot_2.png)
+
+###### 3º Consulta:
+SELECT nome, data_nascimento 
+FROM contratado
+WHERE UPPER(nome) LIKE UPPER('%ll%')
+GROUP BY nome, data_nascimento;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.7%20CONSULTAS%20COM%20GROUP%20BY%20E%20FUN%C3%87ES%20DE%20AGRUPAMENTO/Screenshot_3.png)
+
+
+###### 4º Consulta:
+SELECT nome, sobrenome, ultimo_acesso, data_nascimento
+FROM usuario
+WHERE data_nascimento > '1995-11-15'
+GROUP BY nome, sobrenome, ultimo_acesso, data_nascimento;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.7%20CONSULTAS%20COM%20GROUP%20BY%20E%20FUN%C3%87ES%20DE%20AGRUPAMENTO/Screenshot_4.png)
+
+###### 5º Consulta:
+SELECT filme.titulo, filme.subtitulo, acesso.acesso
+FROM filme
+INNER JOIN acesso ON(filme.id_acesso = acesso.id_acesso)
+WHERE filme.id_acesso = 1
+GROUP BY filme.titulo, filme.subtitulo, acesso.acesso;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.7%20CONSULTAS%20COM%20GROUP%20BY%20E%20FUN%C3%87ES%20DE%20AGRUPAMENTO/Screenshot_5.png)
+
+###### 6º Consulta:
+SELECT usuario.nome, pagamento.numero_cartao, pagamento.validade_cartao
+FROM pagamento
+INNER JOIN usuario ON(pagamento.id_usuario = usuario.id_usuario)
+WHERE pagamento.validade_cartao > '2021-12-03'
+GROUP BY usuario.nome, pagamento.numero_cartao, pagamento.validade_cartao;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.7%20CONSULTAS%20COM%20GROUP%20BY%20E%20FUN%C3%87ES%20DE%20AGRUPAMENTO/Screenshot_6.png)
+
+
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW 
 - Self Join:
 Pelo fato do nosso banco estar normalizado não tem como realizarmos SELF JOIN, todas as informações estão separadas em sua respectiva tabela
