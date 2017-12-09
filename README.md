@@ -437,6 +437,52 @@ Depois:
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO<br>
 
+###### 1º Consulta:
+SELECT filme.titulo, filme.subtitulo, filme.visualizacoes, filme.avaliacao, filme.capa FROM filme
+INNER JOIN rel_contratado_filme ON(filme.id_filme = rel_contratado_filme.id_filme)
+INNER JOIN contratado ON(rel_contratado_filme.id_contratado = contratado.id_contratado)
+WHERE (UPPER(filme.titulo) LIKE UPPER('%f%') 
+OR UPPER(contratado.nome) LIKE UPPER('%f%')
+OR UPPER(filme.subtitulo) LIKE UPPER('%f%'))
+AND filme.ano > 0
+AND filme.avaliacao > 4
+AND filme.duracao < 120
+GROUP BY filme.titulo, filme.subtitulo, filme.visualizacoes, filme.avaliacao, filme.capa
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.6%20CONSULTAS%20COM%20JUN%C3%87%C3%83O%20E%20ORDENA%C3%87%C3%83O/Screenshot_3.png)
+
+###### 2º Consulta:
+SELECT usuario.nome, modalidade.modalidade,filme.titulo, genero.genero, contratado.nome AS "Diretor" , acesso.acesso AS gratuito, pais.pais
+FROM historico_visualizacao
+INNER JOIN usuario ON(historico_visualizacao.id_usuario = usuario.id_usuario)
+INNER JOIN filme ON(historico_visualizacao.id_filme = filme.id_filme)
+INNER JOIN acesso ON(filme.id_acesso = acesso.id_acesso)
+INNER JOIN rel_filme_genero ON(filme.id_filme = rel_filme_genero.id_filme)
+INNER JOIN genero ON(rel_filme_genero.id_genero = genero.id_genero)
+INNER JOIN pais ON(filme.id_pais = pais.id_pais)
+INNER JOIN rel_usuario_modalidade ON(usuario.id_usuario = rel_usuario_modalidade.id_usuario)
+INNER JOIN modalidade ON(rel_usuario_modalidade.id_modalidade = modalidade.id_modalidade)
+INNER JOIN rel_contratado_filme ON(filme.id_filme = rel_contratado_filme.id_filme)
+INNER JOIN rel_contratado_funcao ON(rel_contratado_filme.id_contratado = rel_contratado_funcao.id_contratado)
+INNER JOIN contratado ON(rel_contratado_funcao.id_contratado = contratado.id_contratado)
+WHERE rel_contratado_funcao.id_funcao = 2;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.6%20CONSULTAS%20COM%20JUN%C3%87%C3%83O%20E%20ORDENA%C3%87%C3%83O/Screenshot_1.png)
+
+###### 3º Consulta:
+SELECT filme.titulo, filme.subtitulo, filme.visualizacoes, filme.avaliacao, filme.capa 
+FROM filme 
+INNER JOIN rel_filme_genero ON(filme.id_filme = rel_filme_genero.id_filme)
+WHERE UPPER(filme.titulo) LIKE UPPER('%s%') 
+AND rel_filme_genero.id_genero = 2 
+AND filme.visualizacoes > 5000
+AND filme.avaliacao > 4
+AND filme.ano > 1975
+AND filme.duracao > 120
+ORDER BY filme.titulo ASC;
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.6%20CONSULTAS%20COM%20JUN%C3%87%C3%83O%20E%20ORDENA%C3%87%C3%83O/Screenshot_2.png)
+
+
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇES DE AGRUPAMENTO<br>
 
 ###### 1º Consulta:
@@ -524,4 +570,23 @@ SELECT nome, sobrenome, login from usuario
 INNER JOIN rel_usuario_modalidade ON (usuario.id_usuario = rel_usuario_modalidade.id_usuario)
 WHERE id_modalidade = 2;o
 #### 9.10	SUBCONSULTAS <br>
+
+###### 1º Subconsulta:
+SELECT nome, sobrenome from usuario WHERE sobrenome IN(
+  SELECT sobrenome from usuario WHERE nome ILIKE '%h%');
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.10%20SUBCONSULTAS/Screenshot_1.png)
+
+###### 2º Subconsulta:
+SELECT nome, id_usuario from usuario WHERE data_nascimento IN(
+  SELECT data_nascimento from usuario WHERE id_usuario > 2);
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.10%20SUBCONSULTAS/Screenshot_2.png)
+
+###### 3º Subconsulta:
+SELECT * FROM filme WHERE duracao IN(
+   SELECT duracao FROM filme WHERE ano > 2010);
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.10%20SUBCONSULTAS/Screenshot_1.png)
+
 
