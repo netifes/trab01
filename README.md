@@ -440,8 +440,35 @@ Depois:
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇES DE AGRUPAMENTO (Mínimo 6)<br>
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-#### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+#### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)
+- Self Join:
+Pelo fato do nosso banco estar normalizado não tem como realizarmos SELF JOIN, todas as informações estão separadas em sua respectiva tabela
+
+###### 1º View: Lista de usuarios que tem o dia atual como vencimento da assinatura
+CREATE VIEW vencimentosDoDia AS SELECT id_usuario FROM pagamento where current_date = prox_pgto;
+
+###### 2º View: Lista de ususarios bloqueados
+CREATE VIEW usuariosBloqueados AS
+SELECT nome, sobrenome, login from usuario
+INNER JOIN rel_usuario_status ON (usuario.id_usuario = rel_usuario_status.id_usuario)
+WHERE id_status = 2;
+
+###### 3º View: Lista de usuarios com a assinatura Premium
+CREATE VIEW usuariosPremium AS
+SELECT nome, sobrenome, login from usuario
+INNER JOIN rel_usuario_modalidade ON (usuario.id_usuario = rel_usuario_modalidade.id_usuario)
+WHERE id_modalidade = 1;
+
+###### 4º View: Lista de ususarios Inativos(Muito tempo sem entrar no netIfes)
+CREATE VIEW usuariosInativos AS
+SELECT nome, sobrenome, login from usuario
+INNER JOIN rel_usuario_modalidade ON (usuario.id_usuario = rel_usuario_modalidade.id_usuario)
+WHERE id_modalidade = 3;
+
+###### 5º View: Lista de usuario com a assinatura Simples
+CREATE VIEW usuariosSimples AS
+SELECT nome, sobrenome, login from usuario
+INNER JOIN rel_usuario_modalidade ON (usuario.id_usuario = rel_usuario_modalidade.id_usuario)
+WHERE id_modalidade = 2;o
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 
