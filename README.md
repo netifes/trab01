@@ -329,7 +329,7 @@ SELECT * FROM usuario WHERE nome LIKE '%Matheus%';
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_4.png)
 
 ###### 5º Consulta:
-SELECT * FROM usuario WHERE email LIKE '%gmail%'; 
+SELECT * FROM usuario WHERE login LIKE '%gmail%'; 
 
 ![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.4%20CONSULTAS%20QUE%20USAM%20OPERADORES%20LIKE/Screenshot_5.png)
 
