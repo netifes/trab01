@@ -82,7 +82,6 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
     - **Sexo:** Campo que armazena o sexo do usário.
     - **Endereco:** Campo que armazena o endereço do usuário.
     - **Senha:** Campo que armazena a senha que o usuário irá utilizar para fazer login no provedor.
-    - **Login:** Campo que armazena o loggin que o usuário irá utilizar para fazer login no provedor.
     - **Status:** Campo que verifica se o usuário está com a conta bloqueada ou não, situação que ocorrre por exemplo que errar a senha 3 vezes (Bloqueado, Desbloqueado).
 
 - **Filme:** Tabela que armazena as informações relativas aos filmes cadastrados no sistema.
@@ -149,18 +148,86 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
    
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS<br>
-- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.1%20-%20Consultas.sql)
-- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.1)
+
+
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE <br>
-- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.2%20-%20Consultas.sql)
-- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.2)
+
+
+
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E CAMPOS RENOMEADOS
-- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.3%20-%20Consultas%20e%20Alteracoes%20.sql)
-- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.3)
+- Consultas que envolvam os operadores lógicos AND, OR e Not: <br>
+###### 1º Consulta:
+SELECT * FROM filme WHERE ano > 2000 AND avaliacao > 3; <br>
+
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_1.png)
+
+
+###### 2º Consulta:
+SELECT * FROM filme WHERE titulo = 'Batman' AND duracao > 120;<br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_2.png)
+
+
+###### 3º Consulta:
+SELECT * FROM filme WHERE titulo = 'Batman' AND duracao > 120;<br>
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_3.png)
+
+
+###### 4º Consulta:
+SELECT * FROM usuario WHERE login = 'brendaSouzaGomes@rhyta.com' AND senha = 'queiP3lah5'; 
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_4.png)
+
+
+###### 5º Consulta:
+Select * from usuario where nome = 'Matheus' or senha = 'jndsuiHi8h';
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_5.png)
+
+- Criar no mínimo 3 consultas com operadores aritméticos 
+###### 1º Consulta:
+SELECT  visualizacoes, ((visualizacoes*1.0/ 299824) *100)  AS mediaVisualizacoes FROM filme;
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_6.png)
+
+- Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+
+###### 1º Consulta:
+SELECT capa AS "'Link do cartaz do filme'", titulo AS "'Nome do Filme'" FROM filme WHERE titulo = 'Frozen';
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_7.png)
+
+###### 2º Consulta:
+SELECT ultm_pgto AS "'Data do ultimo pagamento'", prox_pgto AS "'Data do proximo pagamento'" FROM pagamento WHERE  ultm_pgto > '2017-01-01';
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_8.png)
+
+###### 3º Consulta:
+SELECT id_funcao AS "'Numero da funcao'", descricao AS "'Nome da Funcao'" FROM funcao WHERE descricao = 'Ator';
+![Alt Text](https://github.com/netifes/trab01/blob/master/images/9%20-%20TABELAS%20E%20PRINCIPAIS%20CONSULTAS/9.3%20CONSULTAS%20QUE%20USAM%20OPERADORES%20L%C3%93GICOS%2C%20ARITM%C3%89TICOS%20E%20TABELAS%20OU%20CAMPOS%20RENOMEADOS/Screenshot_9.png)
      
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE<br>
-- [Instruçoes SQL](https://github.com/netifes/trab01/blob/master/arquivos/9.4%20-%20Consultas.sql)
-- [Prints da Tela](https://github.com/netifes/trab01/tree/master/images/9%20-%20Tabelas%20e%20Principais%20Consultas/Tabelas%209.4)
+- Consultas que envolvam like ou ilike
+
+SELECT * FROM filme WHERE sinopse LIKE '%Star%' or  subtitulo LIKE '%trevas%';
+
+SELECT * FROM filme WHERE sinopse LIKE '%amor%'; 
+
+SELECT * FROM filme WHERE titulo LIKE 'F%'; 
+
+SELECT * FROM usuario WHERE nome LIKE '%Matheus%'; 
+
+SELECT * FROM usuario WHERE email LIKE '%gmail%'; 
+
+SELECT * FROM cep WHERE endereco LIKE '%Rua%'; 
+9
+SELECT * FROM contratado WHERE nome ILIKE '%ford%';
+10
+
+- Criar uma consulta para cada tipo de função data apresentada.
+
+SELECT nome, date_part('year',(age(current_date, data_nascimento))) AS "'Idade'" FROM contratado WHERE nome ILIKE '%w%'; 
+
+SELECT nome, sobrenome,(age(current_date, ultimo_acesso)) AS "'Tempo ultimo acesso'" FROM usuario;
+
+SELECT nome, sobrenome,date_part('year',(age(current_date, data_nascimento))) AS "'Idade'" FROM usuario;
+
+SELECT id_usuario, extract(day from ultm_pgto) AS "'Dia de vencimento'" FROM pagamento;
+
 >## Marco de Entrega 03 em: (Data definida no cronograma)<br>
     
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
@@ -173,40 +240,4 @@ O usuário terá a sua disposição uma lista bem extensa de filmes disponíveis
         a) Uma junção que envolva Self Join
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
-
-### 10  FORMATACAO NO GIT: https://help.github.com/articles/basic-writing-and-formatting-syntax/
-<comentario no git>
-    
-##### About Formatting
-    https://help.github.com/articles/about-writing-and-formatting-on-github/
-    
-##### Basic Formatting in Git
-    
-    https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests
-    
-    
-##### Working with advanced formatting
-    https://help.github.com/articles/working-with-advanced-formatting/
-#### Mastering Markdown
-    https://guides.github.com/features/mastering-markdown/
-
-
-### OBSERVAÇÕES IMPORTANTES
-
-#### Todos os arquivos que fazem parte do projeto (Imagens, pdfs, arquivos fonte, etc..), devem estar presentes no GIT. Os arquivos do projeto vigente não devem ser armazenados em quaisquer outras plataformas.
-1. Caso existam arquivos com conteúdos sigilosos, comunicar o professor que definirá em conjunto com o grupo a melhor forma de armazenamento do arquivo.
-
-#### Todos os grupos deverão fazer Fork deste repositório e dar permissões administrativas ao usuário deste GIT, para acompanhamento do trabalho.
-
-#### Os usuários criados no GIT devem possuir o nome de identificação do aluno (não serão aceitos nomes como Eu123, meuprojeto, pro456, etc). Em caso de dúvida comunicar o professor.
-
-
-Link para BrModelo:<br>
-http://sis4.com/brModelo/brModelo/download.html
-<br>
-
-
-Link para curso de GIT<br>
-![https://www.youtube.com/curso_git](https://www.youtube.com/playlist?list=PLo7sFyCeiGUdIyEmHdfbuD2eR4XPDqnN2?raw=true "Title")
-
 
